@@ -1,0 +1,11 @@
+%link {
+  &:link,
+  &:visited {
+    color: $almost_black;
+    text-decoration: none;
+  }
+
+  &:hover, &:active {
+    color: $almost_black;
+  }
+}

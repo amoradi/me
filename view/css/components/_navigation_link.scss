@@ -1,0 +1,9 @@
+.NavigationLink {
+  @extend %link;
+  @include normal_font;
+  padding-bottom: 4px;
+
+  &:hover {
+    border-bottom: 3px solid $aquamarine;
+  }
+}

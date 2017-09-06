@@ -1,0 +1,16 @@
+html {
+  overflow-y: scroll;
+}
+
+body {
+  background: $lightest_gray;
+  color: $almost_black;
+  margin: 0;
+  padding-bottom: 7rem;
+  letter-spacing: 0.75px;
+  
+  > style + div:last-child > * {
+    margin-left: 9px;
+    box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.06) !important;
+  }
+}

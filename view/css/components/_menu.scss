@@ -1,0 +1,53 @@
+@include open_menu(".Menu");
+
+.Menu {
+  transition: transform $base_transition_duration $ease_in_out_quad;
+  background-color: transparent; 
+  position: fixed;
+  top: 0;
+  left: #{-$menu_width};
+  bottom: 0;
+  height: 100%;
+  width: $menu_width;
+  z-index: $z-index-base;
+  padding-left: 2rem;
+  padding-top: calc(22px + 4rem);
+  box-sizing: border-box;
+
+  &-list {
+    padding: 0;
+    list-style-type: none;
+  }
+
+  &-link {
+    transition: color $base_transition_duration $ease_in_out_quad;
+    color: $almost_black;
+    text-decoration: none;
+    font-size: $base_font;
+    display: block;
+    padding-bottom: $base_meter;
+
+    &:hover {
+      transition: color $base_transition_duration $ease_in_out_quad;
+      color: $aqua_small;
+    }
+  }
+
+  &:after {
+    transition: max-height $base_transition_duration $ease_in_out_quad;
+    content: "";
+    display: block;
+    height: 100%;
+    max-height: 0;
+    width: 1px;
+    background-color: #cdcdcd;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .is-open + &:after {
+    max-height: 100%;
+    transition: max-height 400ms $ease_in_out_quad;
+  }
+}

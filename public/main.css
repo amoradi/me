@@ -1,0 +1,378 @@
+@font-face {
+  font-family: 'NHaasGrotesk';
+  src: url("/assets/fonts/NHaasGroteskTXPro-65Md.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/NHaasGroteskTXPro-65Md.woff") format("woff"), url("/assets/fonts/NHaasGroteskTXPro-65Md.ttf") format("truetype"), url("/assets/fonts/NHaasGroteskTXPro-65Md.svg#NHaasGroteskTXPro-65Md") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Paul';
+  src: url("/assets/fonts/paulgrotesk-regular-trail-webfont.woff") format("woff"), url("/assets/fonts/paulgrotesk-regular-trail-webfont.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal; }
+
+.NavigationLink:link, .SiteTitle:link, .NavigationLink:visited, .SiteTitle:visited {
+  color: #111;
+  text-decoration: none; }
+
+.NavigationLink:hover, .SiteTitle:hover, .NavigationLink:active, .SiteTitle:active {
+  color: #111; }
+
+html {
+  overflow-y: scroll; }
+
+body {
+  background: #f4f4f4;
+  color: #111;
+  margin: 0;
+  padding-bottom: 7rem;
+  letter-spacing: 0.75px; }
+  body > style + div:last-child > * {
+    margin-left: 9px;
+    box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.06) !important; }
+
+#App {
+  font-family: "Paul";
+  color: #111; }
+
+.Navigation-links {
+  padding-left: 2rem; }
+
+.NavigationList {
+  margin: 96px 0 0;
+  padding: 0;
+  list-style-type: none; }
+
+.NavigationLink {
+  font: 18px/48px "Paul";
+  padding-bottom: 4px; }
+  .NavigationLink:hover {
+    border-bottom: 3px solid aquamarine; }
+
+.NoteList {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; }
+
+.is-open ~ .Stage {
+  transition: transform 200ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transform: translateX(174px); }
+
+.Stage {
+  margin: 4rem auto 2rem;
+  transition: transform 200ms cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+  .Stage-wrap {
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #fff;
+    padding: 1rem;
+    max-width: 920px;
+    position: relative;
+    top: 10px;
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.06); }
+    @media (min-width: 768px) {
+      .Stage-wrap {
+        width: 85%; } }
+  .Stage-content {
+    padding: 1rem; }
+
+.SiteTitle {
+  font: 24px/34px "Paul"; }
+
+.LoggedInControls {
+  display: none; }
+
+.NoteDetail {
+  page-break-inside: avoid;
+  min-height: 134px;
+  position: relative;
+  padding: 2rem 2rem 5rem;
+  width: calc(100% - 32px);
+  box-sizing: border-box;
+  background-color: aquamarine;
+  margin: 1rem;
+  height: 204px;
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.25s, background-color 0.25s;
+  text-decoration: none; }
+  @media (min-width: 768px) {
+    .NoteDetail {
+      width: calc(50% - 32px); } }
+  .NoteDetail:hover {
+    transition: box-shadow 0.25s, background-color 0.25s;
+    cursor: pointer;
+    background-color: #b8ffe7;
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.16); }
+  .NoteDetail a {
+    text-decoration: none; }
+  .NoteDetail-name {
+    font: 24px/34px "Paul";
+    line-height: 48px;
+    font: 17px/23px "NHaasGrotesk";
+    line-height: 30px;
+    line-height: 1.3;
+    display: block;
+    color: #111; }
+  .NoteDetail-subjects {
+    font: 21px/48px "Paul";
+    font: 16px/19px "Paul";
+    color: #111;
+    line-height: 2; }
+  .NoteDetail-readStat {
+    transition: color 0.25s;
+    font-size: 13px;
+    font-family: "Paul", "Open Sans", sans-serif;
+    color: #39ca99;
+    line-height: 1;
+    display: block;
+    padding-bottom: 1rem;
+    letter-spacing: 1px; }
+  .NoteDetail:hover .NoteDetail-readStat {
+    transition: color 0.25s; }
+
+.SearchBar div {
+  font-family: "Paul", "Open Sans", sans-serif;
+  font-size: 14px; }
+
+.Sideways {
+  transform: rotate(90deg);
+  transform-origin: left top 0;
+  float: right; }
+
+.is-open ~ .Menu {
+  transition: transform 200ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transform: translateX(174px); }
+
+.Menu {
+  transition: transform 200ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: -174px;
+  bottom: 0;
+  height: 100%;
+  width: 174px;
+  z-index: 1;
+  padding-left: 2rem;
+  padding-top: calc(22px + 4rem);
+  box-sizing: border-box; }
+  .Menu-list {
+    padding: 0;
+    list-style-type: none; }
+  .Menu-link {
+    transition: color 200ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    color: #111;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    padding-bottom: 1rem; }
+    .Menu-link:hover {
+      transition: color 200ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+      color: #4ed5a8; }
+  .Menu:after {
+    transition: max-height 200ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    content: "";
+    display: block;
+    height: 100%;
+    max-height: 0;
+    width: 1px;
+    background-color: #cdcdcd;
+    position: absolute;
+    right: 0;
+    top: 0; }
+  .is-open + .Menu:after {
+    max-height: 100%;
+    transition: max-height 400ms cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+
+.Hamburger {
+  display: block;
+  position: fixed;
+  left: 2rem;
+  top: 1.75rem;
+  z-index: 2;
+  height: 38px; }
+  .Hamburger:hover {
+    cursor: pointer; }
+  .Hamburger-bar {
+    height: 4px;
+    background: #111;
+    margin-bottom: 7px;
+    width: 38px;
+    transition: all cubic-bezier(0.455, 0.03, 0.515, 0.955) 200ms; }
+  .Hamburger.is-open {
+    width: 38px; }
+  .is-open .Hamburger-bar {
+    transition: all cubic-bezier(0.455, 0.03, 0.515, 0.955) 200ms;
+    transform: rotate(45deg);
+    position: absolute;
+    top: calc(50% - 9px);
+    width: 30px;
+    height: 3px; }
+  .is-open .Hamburger-bar:nth-of-type(2) {
+    transform: rotate(-45deg); }
+
+.Note {
+  padding: 2rem 1rem;
+  max-width: 767px;
+  margin: 0 auto; }
+  @media (min-width: 768px) {
+    .Note {
+      padding: 2rem; } }
+  .Note-heading {
+    font: 26px/48px "NHaasGrotesk";
+    margin: 2rem 0; }
+  .Note-headingMeta {
+    color: #ccc;
+    font-size: 18px;
+    font-weight: 300;
+    font-family: "Paul";
+    line-height: 48px;
+    display: inline-block;
+    vertical-align: middle; }
+  .Note-body ul {
+    list-style-type: square;
+    padding: 2rem;
+    list-style-position: inside;
+    background-color: #fff8f7; }
+    .Note-body ul li {
+      font: 19px/1.7 "Paul";
+      color: #777; }
+  .Note-body p {
+    font: 19px/1.7 "Paul";
+    color: #777; }
+  .Note-body a {
+    color: #f56851;
+    text-decoration: none; }
+  .Note-body h2 {
+    margin: 3rem 0 1rem;
+    font-size: 21px;
+    font-family: "NHaasGrotesk";
+    font-weight: 300; }
+  .Note-admin {
+    list-style-type: square;
+    padding: 2rem;
+    list-style-position: inside;
+    background-color: #fff8f7;
+    background-color: #eafff8;
+    margin: 4rem 0 2rem; }
+    .Note-admin li {
+      font: 19px/1.7 "Paul";
+      color: #777; }
+  .Note-adminLink {
+    text-decoration: none;
+    color: inherit; }
+
+.Navigator {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  position: relative;
+  font-family: "Paul", "Open Sans", sans-serif;
+  transition: color 200ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  color: #111;
+  font-size: 16px; }
+  .Navigator:hover,
+  .Navigator:hover .Navigator-icon {
+    transition: color 200ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    color: #4ed5a8 !important; }
+  .Navigator-icon {
+    color: #111 !important;
+    margin-right: 4px;
+    transform: scale(0.85); }
+
+.Form-label, .Form-control,
+.Form select {
+  font: 18px/48px "Paul";
+  line-height: 1.4;
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box; }
+
+/*
+
+github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #333;
+  background: #fff8f7; }
+
+.hljs-comment,
+.hljs-quote {
+  color: #998;
+  font-style: italic; }
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+  color: #333;
+  font-weight: bold; }
+
+.hljs-number,
+.hljs-literal,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag .hljs-attr {
+  color: #008080; }
+
+.hljs-string,
+.hljs-doctag {
+  color: #d14; }
+
+.hljs-title,
+.hljs-section,
+.hljs-selector-id {
+  color: #900;
+  font-weight: bold; }
+
+.hljs-subst {
+  font-weight: normal; }
+
+.hljs-type,
+.hljs-class .hljs-title {
+  color: #458;
+  font-weight: bold; }
+
+.hljs-tag,
+.hljs-name,
+.hljs-attribute {
+  color: #000080;
+  font-weight: normal; }
+
+.hljs-regexp,
+.hljs-link {
+  color: #009926; }
+
+.hljs-symbol,
+.hljs-bullet {
+  color: #990073; }
+
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #0086b3; }
+
+.hljs-meta {
+  color: #999;
+  font-weight: bold; }
+
+.hljs-deletion {
+  background: #fdd; }
+
+.hljs-addition {
+  background: #dfd; }
+
+.hljs-emphasis {
+  font-style: italic; }
+
+.hljs-strong {
+  font-weight: bold; }
+
+.hljs {
+  padding: 2rem; }

@@ -1,0 +1,12 @@
+.Form {
+  &-label,
+  &-control,
+  select {
+    @include normal_font;
+    line-height: 1.4;
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+}

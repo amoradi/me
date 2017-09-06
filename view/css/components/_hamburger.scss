@@ -1,0 +1,37 @@
+.Hamburger {
+  display: block;
+  position: fixed;
+  left: 2rem;
+  top: 1.75rem;
+  z-index: $z-index-just-a-touch;
+  height: $min_target_size;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &-bar {
+    height: 4px;
+    background: $almost_black;
+    margin-bottom: 7px;
+    width: $min_target_size;
+    transition: all $ease_in_out_quad $base_transition_duration;
+  }
+
+  &.is-open {
+    width: $min_target_size;
+  }
+
+  .is-open &-bar {
+    transition: all $ease_in_out_quad $base_transition_duration;
+    transform: rotate(45deg);
+    position: absolute;
+    top: calc(50% - 9px);
+    width: 30px;
+    height: 3px;
+  }
+
+  .is-open &-bar:nth-of-type(2) {
+    transform: rotate(-45deg);
+  }
+}

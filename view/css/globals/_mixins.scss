@@ -1,0 +1,68 @@
+@mixin link {
+  a:link {
+    color: $almost_black;
+  }
+
+  a:visited {
+    color: $almost_black;
+  }
+
+  a:hover {
+    color: $almost_black;
+  }
+
+  a:active {
+    color: $almost_black;
+  }
+}
+
+@mixin large_font {
+  font: #{$large_font}/#{$large_line_height} $font_family;
+}
+
+@mixin normal_font {
+  font: #{$normal_font}/#{$normal_line_height} $font_family;
+}
+
+@mixin note_body_font {
+  font: 19px/1.7 $font_family;
+  color: $gray_medium;
+}
+
+@mixin medium_font {
+  font: #{$medium_font}/#{$larger_line_height} $font_family;
+}
+
+@mixin large_font_w_room {
+  @include large_font;
+  line-height: $larger_line_height;
+}
+
+@mixin note_heading_font {
+  font: #{$larger_font}/#{$larger_line_height} $display_font_family;
+  margin: 2rem 0;
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin note_ul {
+  list-style-type: square;
+  padding: 2rem;
+  list-style-position: inside;
+  background-color: $light_red;
+
+  li {
+    @include note_body_font;
+  }
+}
+
+@mixin open_menu($elem) {
+  .is-open ~ #{$elem} {
+    transition: transform $base_transition_duration $ease_in_out_quad;
+    transform: translateX($menu_width);
+  }
+}

@@ -1,0 +1,4 @@
+.SiteTitle {
+  @extend %link;
+  @include large_font;
+}

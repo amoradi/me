@@ -1,0 +1,22 @@
+.Navigator {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  position: relative;
+  font-family: $detail_font_family;
+  transition: color $base_transition_duration $ease_in_out_quad;
+  color: $almost_black;
+  font-size: $base_font;
+
+  &:hover,
+  &:hover &-icon {
+    transition: color $base_transition_duration $ease_in_out_quad;
+    color: $aqua_small !important;
+  }
+
+  &-icon {
+    color: $almost_black !important;
+    margin-right: 4px;
+    transform: scale(0.85);
+  }
+}

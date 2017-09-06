@@ -1,0 +1,56 @@
+.Note {
+  padding: 2rem 1rem;
+  max-width: 767px;
+  margin: 0 auto;
+
+  @include desktop {
+    padding: 2rem;
+  }
+
+  &-heading {
+    @include note_heading_font;
+  }
+
+  &-headingMeta {
+    color: $soft_gray;
+    font-size: $normal_font;
+    font-weight: 300;
+    font-family: $font_family;
+    line-height: $larger_line_height;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &-body {
+    ul {
+      @include note_ul;
+    }
+
+    p {
+      @include note_body_font;
+    }
+
+    a {
+      color: $red;
+      text-decoration: none;
+    }
+
+    h2 {
+      margin: 3rem 0 1rem;
+      font-size: $medium_font;
+      font-family: $display_font_family;
+      font-weight: 300;
+    }
+  }
+
+  &-admin {
+    @include note_ul;
+    background-color: $light_green;
+    margin: 4rem 0 2rem;
+  }
+
+  &-adminLink {
+    text-decoration: none;
+    color: inherit;
+  }
+}

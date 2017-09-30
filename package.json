@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "engines": {
-    "node": "6.11.0"
+    "node": "6.11.0",
+    "yarn": "0.22.0"
   },
   "scripts": {
     "start": "pug view/html/index.pug --out public; node index.js",

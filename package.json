@@ -36,6 +36,7 @@
     "material-ui-search-bar": "^0.3.0",
     "mongoose": "^4.0.8",
     "morgan": "^1.6.1",
+    "node-gyp": "^3.6.2",
     "node-sass": "^4.5.3",
     "pug": "^2.0.0-rc.2",
     "pug-cli": "^1.0.0-alpha6",

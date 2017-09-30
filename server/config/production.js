@@ -1,6 +1,6 @@
 module.exports = {
   logging: false,
   db: {
-    url: 'mongodb://localhost/notes'
+    url: process.env.MONGODB_URI
   }
 };

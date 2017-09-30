@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "pug view/html/index.pug --out public; node index.js",
+    "heroku-postbuild": "pug view/html/index.pug --out public",
     "test": "mocha tests/api_spec.js",
     "watch": "webpack --watch",
     "nodemon": "nodemon --watch public --watch view",

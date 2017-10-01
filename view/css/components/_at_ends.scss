@@ -1,0 +1,13 @@
+.AtEnds {
+  @include note_body_font;
+  display: flex;
+  justify-content: space-between;
+
+  &-content {
+    line-height: 1.4;
+  }
+
+  &-right {
+    text-align: right;
+  }
+}

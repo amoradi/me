@@ -76,6 +76,8 @@ body {
     @media (min-width: 768px) {
       .Stage-wrap {
         width: 85%; } }
+  .Stage-conform {
+    padding: 1rem 1rem 0; }
   .Stage-content {
     padding: 1rem; }
 
@@ -238,11 +240,17 @@ body {
     list-style-position: inside;
     background-color: #fff8f7; }
     .Note-body ul li {
-      font: 19px/1.7 "Paul";
+      font: 16px/1.7 "Paul";
       color: #777; }
+      @media (min-width: 768px) {
+        .Note-body ul li {
+          font-size: 19px; } }
   .Note-body p {
-    font: 19px/1.7 "Paul";
+    font: 16px/1.7 "Paul";
     color: #777; }
+    @media (min-width: 768px) {
+      .Note-body p {
+        font-size: 19px; } }
   .Note-body a {
     color: #f56851;
     text-decoration: none; }
@@ -259,8 +267,11 @@ body {
     background-color: #eafff8;
     margin: 4rem 0 2rem; }
     .Note-admin li {
-      font: 19px/1.7 "Paul";
+      font: 16px/1.7 "Paul";
       color: #777; }
+      @media (min-width: 768px) {
+        .Note-admin li {
+          font-size: 19px; } }
   .Note-adminLink {
     text-decoration: none;
     color: inherit; }
@@ -291,6 +302,19 @@ body {
   width: 100%;
   padding: 1rem;
   box-sizing: border-box; }
+
+.Form-button {
+  padding: 1rem;
+  margin: 0 0.2rem;
+  background-color: #4ed5a8;
+  border: none;
+  border-radius: 3px;
+  color: #fff; }
+  .Form-button:hover {
+    cursor: pointer; }
+
+.Form-button + .Form-button {
+  background-color: #f56851; }
 
 /*
 
@@ -376,3 +400,19 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 .hljs {
   padding: 2rem; }
+
+.ResponsiveImage {
+  max-width: 100%; }
+
+.AtEnds {
+  font: 16px/1.7 "Paul";
+  color: #777;
+  display: flex;
+  justify-content: space-between; }
+  @media (min-width: 768px) {
+    .AtEnds {
+      font-size: 19px; } }
+  .AtEnds-content {
+    line-height: 1.4; }
+  .AtEnds-right {
+    text-align: right; }

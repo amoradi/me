@@ -11,6 +11,7 @@ import NoteList from './containers/note_list';
 import NoteShow from './containers/note_show';
 import EditNote from './containers/note_edit';
 import AddNewNote from './components/add_new_note';
+import AddNewSubject from './components/add_new_subject';
 import ProjectList from './containers/project_list';
 import Hamburger from './components/hamburger';
 import Navigation from './components/navigation';
@@ -35,6 +36,7 @@ ReactDOM.render(
             <div className="Stage-wrap">
               <Switch>
                 <Route path="/notes/new" component={AddNewNote} />
+                <Route path="/subjects/new" component={AddNewSubject} />
                 <Route path="/notes/edit/:slug" component={EditNote} />
                 <Route path="/notes/:slug" component={NoteShow} />
                 <Route exact path="/notes" component={NoteList} />

@@ -9,4 +9,21 @@
     padding: 1rem;
     box-sizing: border-box;
   }
+
+  &-button {
+    padding: 1rem;
+    margin: 0 0.2rem;
+    background-color: $aqua_small;
+    border: none;
+    border-radius: 3px;
+    color: $white;
+    
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &-button + &-button {
+    background-color: $red;
+  }
 }

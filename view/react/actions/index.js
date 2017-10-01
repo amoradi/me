@@ -1,10 +1,13 @@
 import axios from 'axios';
 
+import { LS_NOTES_TOKEN } from '../constants';
+
 export const FETCH_NOTES = 'FETCH_NOTES';
 export const FETCH_SEARCHED_NOTES = 'FETCH_SEARCHED_NOTES';
 export const FETCH_NOTE = 'FETCH_NOTE';
 export const FETCH_SUBJECTS = 'FETCH_SUBJECTS';
 export const CREATE_NOTE = 'CREATE_NOTE';
+export const CREATE_SUBJECT = 'CREATE_SUBJECT';
 export const DELETE_NOTE = 'DELETE_NOTE';
 export const EDIT_NOTE = 'EDIT_NOTE';
 export const SIGNED_IN = 'SIGNED_IN';
@@ -36,21 +39,12 @@ export function fetchNote(slug) {
   }
 }
 
-export function fetchSubjects() {
-  const request = axios.get('/api/subjects');
-
-  return {
-    type: FETCH_SUBJECTS,
-    payload: request
-  }
-}
-
 export function createNote(values, callback) {
   const request = axios({
       method: 'post',
       url: '/api/notes/',
       data: values,
-      headers: { Authorization: "Bearer " + window.localStorage["amoradi-notes-token"]}
+      headers: { Authorization: "Bearer " + window.localStorage[LS_NOTES_TOKEN]}
     })
     .then(() => callback());
 
@@ -64,7 +58,7 @@ export function deleteNote(id, callback) {
   const request = axios({
       method: 'delete',
       url: '/api/notes/' + id,
-      headers: { Authorization: "Bearer " + window.localStorage["amoradi-notes-token"]}
+      headers: { Authorization: "Bearer " + window.localStorage[LS_NOTES_TOKEN]}
     })
     .then(() => callback());
 
@@ -79,7 +73,7 @@ export function editNote(id, values, callback) {
       method: 'put',
       url: '/api/notes/' + id,
       data: values,
-      headers: { Authorization: "Bearer " + window.localStorage["amoradi-notes-token"]}
+      headers: { Authorization: "Bearer " + window.localStorage[LS_NOTES_TOKEN]}
     })
     .then(() => callback());
 
@@ -89,10 +83,34 @@ export function editNote(id, values, callback) {
   }
 }
 
+export function createSubject(values, callback) {
+  const request = axios({
+      method: 'post',
+      url: '/api/subjects/',
+      data: values,
+      headers: { Authorization: "Bearer " + window.localStorage[LS_NOTES_TOKEN]}
+    })
+    .then(() => callback());
+
+  return {
+    type: CREATE_SUBJECT,
+    payload: request
+  }
+}
+
+export function fetchSubjects() {
+  const request = axios.get('/api/subjects');
+
+  return {
+    type: FETCH_SUBJECTS,
+    payload: request
+  }
+}
+
 export function signIn(values, callback) {
   const request = axios.post('/auth/signin', values)
     .then((resp) => {
-      window.localStorage.setItem('amoradi-notes-token', resp.data.token);
+      window.localStorage.setItem(LS_NOTES_TOKEN, resp.data.token);
       callback();
     });
 

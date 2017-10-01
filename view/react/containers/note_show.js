@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import MarkdownRenderer from 'react-markdown-renderer';
+
+import { LS_NOTES_TOKEN } from '../constants';
 import { fetchNote, deleteNote } from '../actions';
 import _ from 'lodash';
 import EditNote from '../components/navigation/logged_in_controls/edit_note';
@@ -64,7 +66,7 @@ class NoteShow extends React.Component {
           className="Note-body"
           markdown={this.props.note.body}
         />
-        { window.localStorage["amoradi-notes-token"] &&
+        { window.localStorage[LS_NOTES_TOKEN] &&
           <ul className="Note-admin">
             <li><Link className="Note-adminLink" to={`/notes/edit/${note.slug}`}>edit note</Link></li>
             <li><DeleteNote className="Note-adminLink" onClick={() => this.confirmDeletion(note._id)} /></li>

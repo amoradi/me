@@ -3154,19 +3154,22 @@ exports.f = __webpack_require__(46) ? Object.defineProperty : function definePro
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.SIGNED_IN = exports.EDIT_NOTE = exports.DELETE_NOTE = exports.CREATE_NOTE = exports.FETCH_SUBJECTS = exports.FETCH_NOTE = exports.FETCH_SEARCHED_NOTES = exports.FETCH_NOTES = undefined;
+exports.SIGNED_IN = exports.EDIT_NOTE = exports.DELETE_NOTE = exports.CREATE_SUBJECT = exports.CREATE_NOTE = exports.FETCH_SUBJECTS = exports.FETCH_NOTE = exports.FETCH_SEARCHED_NOTES = exports.FETCH_NOTES = undefined;
 exports.fetchNotes = fetchNotes;
 exports.fetchSearchedNotes = fetchSearchedNotes;
 exports.fetchNote = fetchNote;
-exports.fetchSubjects = fetchSubjects;
 exports.createNote = createNote;
 exports.deleteNote = deleteNote;
 exports.editNote = editNote;
+exports.createSubject = createSubject;
+exports.fetchSubjects = fetchSubjects;
 exports.signIn = signIn;
 
 var _axios = __webpack_require__(544);
 
 var _axios2 = _interopRequireDefault(_axios);
+
+var _constants = __webpack_require__(841);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -3175,6 +3178,7 @@ var FETCH_SEARCHED_NOTES = exports.FETCH_SEARCHED_NOTES = 'FETCH_SEARCHED_NOTES'
 var FETCH_NOTE = exports.FETCH_NOTE = 'FETCH_NOTE';
 var FETCH_SUBJECTS = exports.FETCH_SUBJECTS = 'FETCH_SUBJECTS';
 var CREATE_NOTE = exports.CREATE_NOTE = 'CREATE_NOTE';
+var CREATE_SUBJECT = exports.CREATE_SUBJECT = 'CREATE_SUBJECT';
 var DELETE_NOTE = exports.DELETE_NOTE = 'DELETE_NOTE';
 var EDIT_NOTE = exports.EDIT_NOTE = 'EDIT_NOTE';
 var SIGNED_IN = exports.SIGNED_IN = 'SIGNED_IN';
@@ -3206,21 +3210,12 @@ function fetchNote(slug) {
   };
 }
 
-function fetchSubjects() {
-  var request = _axios2.default.get('/api/subjects');
-
-  return {
-    type: FETCH_SUBJECTS,
-    payload: request
-  };
-}
-
 function createNote(values, callback) {
   var request = (0, _axios2.default)({
     method: 'post',
     url: '/api/notes/',
     data: values,
-    headers: { Authorization: "Bearer " + window.localStorage["amoradi-notes-token"] }
+    headers: { Authorization: "Bearer " + window.localStorage[_constants.LS_NOTES_TOKEN] }
   }).then(function () {
     return callback();
   });
@@ -3235,7 +3230,7 @@ function deleteNote(id, callback) {
   var request = (0, _axios2.default)({
     method: 'delete',
     url: '/api/notes/' + id,
-    headers: { Authorization: "Bearer " + window.localStorage["amoradi-notes-token"] }
+    headers: { Authorization: "Bearer " + window.localStorage[_constants.LS_NOTES_TOKEN] }
   }).then(function () {
     return callback();
   });
@@ -3251,7 +3246,7 @@ function editNote(id, values, callback) {
     method: 'put',
     url: '/api/notes/' + id,
     data: values,
-    headers: { Authorization: "Bearer " + window.localStorage["amoradi-notes-token"] }
+    headers: { Authorization: "Bearer " + window.localStorage[_constants.LS_NOTES_TOKEN] }
   }).then(function () {
     return callback();
   });
@@ -3262,9 +3257,34 @@ function editNote(id, values, callback) {
   };
 }
 
+function createSubject(values, callback) {
+  var request = (0, _axios2.default)({
+    method: 'post',
+    url: '/api/subjects/',
+    data: values,
+    headers: { Authorization: "Bearer " + window.localStorage[_constants.LS_NOTES_TOKEN] }
+  }).then(function () {
+    return callback();
+  });
+
+  return {
+    type: CREATE_SUBJECT,
+    payload: request
+  };
+}
+
+function fetchSubjects() {
+  var request = _axios2.default.get('/api/subjects');
+
+  return {
+    type: FETCH_SUBJECTS,
+    payload: request
+  };
+}
+
 function signIn(values, callback) {
   var request = _axios2.default.post('/auth/signin', values).then(function (resp) {
-    window.localStorage.setItem('amoradi-notes-token', resp.data.token);
+    window.localStorage.setItem(_constants.LS_NOTES_TOKEN, resp.data.token);
     callback();
   });
 
@@ -35998,6 +36018,10 @@ var _add_new_note = __webpack_require__(782);
 
 var _add_new_note2 = _interopRequireDefault(_add_new_note);
 
+var _add_new_subject = __webpack_require__(842);
+
+var _add_new_subject2 = _interopRequireDefault(_add_new_subject);
+
 var _project_list = __webpack_require__(783);
 
 var _project_list2 = _interopRequireDefault(_project_list);
@@ -36060,6 +36084,7 @@ _reactDom2.default.render(_react2.default.createElement(
               _reactRouterDom.Switch,
               null,
               _react2.default.createElement(_reactRouterDom.Route, { path: '/notes/new', component: _add_new_note2.default }),
+              _react2.default.createElement(_reactRouterDom.Route, { path: '/subjects/new', component: _add_new_subject2.default }),
               _react2.default.createElement(_reactRouterDom.Route, { path: '/notes/edit/:slug', component: _note_edit2.default }),
               _react2.default.createElement(_reactRouterDom.Route, { path: '/notes/:slug', component: _note_show2.default }),
               _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/notes', component: _note_list2.default }),
@@ -61660,6 +61685,8 @@ var _reactMarkdownRenderer = __webpack_require__(564);
 
 var _reactMarkdownRenderer2 = _interopRequireDefault(_reactMarkdownRenderer);
 
+var _constants = __webpack_require__(841);
+
 var _actions = __webpack_require__(40);
 
 var _lodash = __webpack_require__(61);
@@ -61771,7 +61798,7 @@ var NoteShow = function (_React$Component) {
           className: 'Note-body',
           markdown: this.props.note.body
         }),
-        window.localStorage["amoradi-notes-token"] && _react2.default.createElement(
+        window.localStorage[_constants.LS_NOTES_TOKEN] && _react2.default.createElement(
           'ul',
           { className: 'Note-admin' },
           _react2.default.createElement(
@@ -78612,17 +78639,32 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _constants = __webpack_require__(841);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Home = function Home(props) {
   return _react2.default.createElement(
-    "div",
-    { className: "Home" },
-    "info.",
-    _react2.default.createElement("br", null),
-    _react2.default.createElement("br", null),
-    "yadda, yadda, yaddaa...",
-    props.children
+    'div',
+    { className: 'Home Stage-conform' },
+    _react2.default.createElement('img', {
+      className: 'ResponsiveImage',
+      src: _constants.IMG_ME_AND_FAM
+    }),
+    _react2.default.createElement(
+      'div',
+      { className: 'AtEnds' },
+      _react2.default.createElement(
+        'p',
+        { className: 'AtEnds-content' },
+        'Aaron Bijan Moradi'
+      ),
+      _react2.default.createElement(
+        'p',
+        { className: 'AtEnds-content AtEnds-right' },
+        'Front End Developer'
+      )
+    )
   );
 };
 
@@ -84048,6 +84090,154 @@ var Typography = function Typography() {
 };
 
 exports.default = new Typography();
+
+/***/ }),
+/* 840 */,
+/* 841 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var LS_NOTES_TOKEN = exports.LS_NOTES_TOKEN = 'amoradi-notes-token';
+var IMG_ME_AND_FAM = exports.IMG_ME_AND_FAM = '/assets/images/me_and_fam.jpg';
+
+/***/ }),
+/* 842 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _lodash = __webpack_require__(61);
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+var _reactRouterDom = __webpack_require__(45);
+
+var _reduxForm = __webpack_require__(149);
+
+var _reactRedux = __webpack_require__(21);
+
+var _actions = __webpack_require__(40);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var AddNewSubject = function (_React$Component) {
+  _inherits(AddNewSubject, _React$Component);
+
+  function AddNewSubject() {
+    _classCallCheck(this, AddNewSubject);
+
+    return _possibleConstructorReturn(this, (AddNewSubject.__proto__ || Object.getPrototypeOf(AddNewSubject)).apply(this, arguments));
+  }
+
+  _createClass(AddNewSubject, [{
+    key: 'renderField',
+    value: function renderField(field) {
+      return _react2.default.createElement(
+        'div',
+        { className: 'Form-group' },
+        _react2.default.createElement(
+          'label',
+          { className: 'Form-label' },
+          field.label
+        ),
+        _react2.default.createElement('input', _extends({
+          className: 'Form-control',
+          type: 'text'
+        }, field.input)),
+        _react2.default.createElement(
+          'p',
+          { className: 'Error' },
+          field.meta.touched ? field.meta.error : ''
+        )
+      );
+    }
+  }, {
+    key: 'onSubmit',
+    value: function onSubmit(values) {
+      var _this2 = this;
+
+      this.props.createSubject(values, function () {
+        _this2.props.history.push('/notes');
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var handleSubmit = this.props.handleSubmit;
+
+
+      return _react2.default.createElement(
+        'form',
+        { className: 'Form AddNewSubject', onSubmit: handleSubmit(this.onSubmit.bind(this)) },
+        _react2.default.createElement(_reduxForm.Field, {
+          label: 'Subject',
+          name: 'name',
+          component: this.renderField
+        }),
+        _react2.default.createElement(
+          'button',
+          { type: 'submit', className: 'Form-button' },
+          'Create Subject'
+        ),
+        _react2.default.createElement(
+          'button',
+          { onClick: this.context.router.history.goBack, className: 'Form-button' },
+          'Cancel'
+        )
+      );
+    }
+  }]);
+
+  return AddNewSubject;
+}(_react2.default.Component);
+
+AddNewSubject.contextTypes = {
+  router: _propTypes2.default.object
+};
+
+
+function validate(values) {
+  var errors = {};
+
+  if (!values.name) {
+    errors.name = "Enter a name";
+  }
+
+  return errors;
+}
+
+exports.default = (0, _reduxForm.reduxForm)({
+  validate: validate,
+  form: 'SubjectsNewForm'
+})((0, _reactRedux.connect)(null, { createSubject: _actions.createSubject })(AddNewSubject));
 
 /***/ })
 /******/ ]);

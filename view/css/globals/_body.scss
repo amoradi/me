@@ -5,6 +5,7 @@ html {
 body {
   background: $lightest_gray;
   color: $almost_black;
+  overflow-x: hidden;
   margin: 0;
   padding-bottom: 7rem;
   letter-spacing: 0.75px;

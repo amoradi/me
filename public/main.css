@@ -23,6 +23,7 @@ html {
 body {
   background: #f4f4f4;
   color: #111;
+  overflow-x: hidden;
   margin: 0;
   padding-bottom: 7rem;
   letter-spacing: 0.75px; }

@@ -260,6 +260,8 @@ body {
     font-size: 21px;
     font-family: "NHaasGrotesk";
     font-weight: 300; }
+  .Note-body h3, .Note-body h4, .Note-body h5, .Note-body h6 {
+    margin-top: 2rem; }
   .Note-admin {
     list-style-type: square;
     padding: 2rem;

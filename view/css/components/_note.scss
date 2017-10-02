@@ -26,6 +26,14 @@
       @include note_ul;
     }
 
+    ul > li:first-child {
+      margin-top: 0;
+    }
+
+    ul > li {
+      margin-bottom: 1.4rem;
+    }
+
     p {
       @include note_body_font;
     }

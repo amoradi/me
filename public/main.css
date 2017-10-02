@@ -246,6 +246,10 @@ body {
       @media (min-width: 768px) {
         .Note-body ul li {
           font-size: 19px; } }
+  .Note-body ul > li:first-child {
+    margin-top: 0; }
+  .Note-body ul > li {
+    margin-bottom: 1.4rem; }
   .Note-body p {
     font: 16px/1.7 "Paul";
     color: #777; }

@@ -249,7 +249,7 @@ body {
   .Note-body ul > li:first-child {
     margin-top: 0; }
   .Note-body ul > li {
-    margin-bottom: 0.7rem; }
+    margin-top: 0.7rem; }
   .Note-body p {
     font: 16px/1.7 "Paul";
     color: #777; }

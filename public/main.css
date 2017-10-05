@@ -239,20 +239,25 @@ body {
     list-style-type: square;
     padding: 2rem;
     list-style-position: inside;
-    background-color: #fff8f7; }
+    background-color: aquamarine; }
     .Note-body ul li {
       font: 16px/1.7 "Paul";
-      color: #777; }
+      color: #333; }
       @media (min-width: 768px) {
         .Note-body ul li {
           font-size: 19px; } }
   .Note-body ul > li:first-child {
     margin-top: 0; }
   .Note-body ul > li {
-    margin-top: 0.7rem; }
+    list-style-position: outside;
+    margin-top: 0.7rem;
+    margin-left: 10px; }
+    @media (min-width: 768px) {
+      .Note-body ul > li {
+        margin-left: 20px; } }
   .Note-body p {
     font: 16px/1.7 "Paul";
-    color: #777; }
+    color: #333; }
     @media (min-width: 768px) {
       .Note-body p {
         font-size: 19px; } }
@@ -270,15 +275,17 @@ body {
     list-style-type: square;
     padding: 2rem;
     list-style-position: inside;
-    background-color: #fff8f7;
-    background-color: #eafff8;
+    background-color: aquamarine;
+    background-color: coral;
     margin: 4rem 0 2rem; }
     .Note-admin li {
       font: 16px/1.7 "Paul";
-      color: #777; }
+      color: #333; }
       @media (min-width: 768px) {
         .Note-admin li {
           font-size: 19px; } }
+    .Note-admin li {
+      color: #fff; }
   .Note-adminLink {
     text-decoration: none;
     color: inherit; }
@@ -333,7 +340,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   overflow-x: auto;
   padding: 0.5em;
   color: #333;
-  background: #fff8f7; }
+  background: #fff;
+  border: 2px solid #f4f4f4; }
 
 .hljs-comment,
 .hljs-quote {
@@ -413,7 +421,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 .AtEnds {
   font: 16px/1.7 "Paul";
-  color: #777;
+  color: #333;
   display: flex;
   justify-content: space-between; }
   @media (min-width: 768px) {

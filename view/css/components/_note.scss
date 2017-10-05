@@ -31,7 +31,13 @@
     }
 
     ul > li {
+      list-style-position: outside;
       margin-top: 0.7rem;
+      margin-left: 10px;
+
+      @include desktop {
+        margin-left: 20px;
+      }
     }
 
     p {
@@ -57,8 +63,12 @@
 
   &-admin {
     @include note_ul;
-    background-color: $light_green;
+    background-color: $coral;
     margin: 4rem 0 2rem;
+
+    li {
+      color: $white;
+    }
   }
 
   &-adminLink {

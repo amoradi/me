@@ -26,7 +26,7 @@
 
 @mixin note_body_font {
   font: 16px/1.7 $font_family;
-  color: $gray_medium;
+  color: $charcoal;
 
   @include desktop {
     font-size: 19px;
@@ -57,7 +57,7 @@
   list-style-type: square;
   padding: 2rem;
   list-style-position: inside;
-  background-color: $light_red;
+  background-color: $aquamarine;
 
   li {
     @include note_body_font;

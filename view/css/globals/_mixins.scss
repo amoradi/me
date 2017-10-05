@@ -54,10 +54,12 @@
 }
 
 @mixin note_ul {
-  list-style-type: square;
-  padding: 2rem;
   list-style-position: inside;
-  background-color: $aquamarine;
+  background-color: transparent;
+  list-style-type: none;
+  padding: 0rem 1rem;
+  border-left: $aquamarine 3px solid;
+  margin: 2rem 0;
 
   li {
     @include note_body_font;

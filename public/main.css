@@ -236,10 +236,12 @@ body {
     display: inline-block;
     vertical-align: middle; }
   .Note-body ul {
-    list-style-type: square;
-    padding: 2rem;
     list-style-position: inside;
-    background-color: aquamarine; }
+    background-color: transparent;
+    list-style-type: none;
+    padding: 0rem 1rem;
+    border-left: aquamarine 3px solid;
+    margin: 2rem 0; }
     .Note-body ul li {
       font: 16px/1.7 "Paul";
       color: #333; }
@@ -272,10 +274,12 @@ body {
   .Note-body h3, .Note-body h4, .Note-body h5, .Note-body h6 {
     margin-top: 2rem; }
   .Note-admin {
-    list-style-type: square;
-    padding: 2rem;
     list-style-position: inside;
-    background-color: aquamarine;
+    background-color: transparent;
+    list-style-type: none;
+    padding: 0rem 1rem;
+    border-left: aquamarine 3px solid;
+    margin: 2rem 0;
     background-color: coral;
     margin: 4rem 0 2rem; }
     .Note-admin li {

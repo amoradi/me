@@ -63,16 +63,17 @@
 
   &-admin {
     @include note_ul;
-    background-color: $coral;
+    background-color: $aquamarine;
     margin: 4rem 0 2rem;
+    padding: 2em 1em;
 
     li {
-      color: $white;
+      color: $almost_black;
     }
   }
 
   &-adminLink {
     text-decoration: none;
-    color: inherit;
+    color: $almost_black;
   }
 }

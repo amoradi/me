@@ -24,7 +24,6 @@ class NoteList extends React.Component {
   }
 
   handleChange(term) {
-    console.log(term);
     this.setState({searchText: term});
 
     if (term) {
@@ -36,7 +35,6 @@ class NoteList extends React.Component {
   }
 
   handleSearch(term = this.state.searchText) {
-    console.log("hand s: " + term);
     this.props.fetchSearchedNotes(term);
   }
 
@@ -64,7 +62,6 @@ class NoteList extends React.Component {
         <Link data-note-id={note._id} to={`/notes/${note.slug}`}
           key={note._id}
           className="NoteList-note NoteDetail">
-            <span className="NoteDetail-readStat">2 min read</span>
             <span className="NoteDetail-name">{note.name}</span>
             <span className="NoteDetail-subjects">{note.subjects.map((sub) => {
               return sub.name }).join(` ${String.fromCharCode(183)} `)}</span>

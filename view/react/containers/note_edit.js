@@ -14,7 +14,6 @@ class EditNote extends React.Component {
   componentDidMount() {
     this.props.fetchSubjects();
     if (!this.props.note) {
-      console.log("no note");
       const { slug } = this.props.match.params;
       this.props.fetchNote(slug);
     }

@@ -280,8 +280,9 @@ body {
     padding: 0rem 1rem;
     border-left: aquamarine 3px solid;
     margin: 2rem 0;
-    background-color: coral;
-    margin: 4rem 0 2rem; }
+    background-color: aquamarine;
+    margin: 4rem 0 2rem;
+    padding: 2em 1em; }
     .Note-admin li {
       font: 16px/1.7 "Paul";
       color: #333; }
@@ -289,10 +290,10 @@ body {
         .Note-admin li {
           font-size: 19px; } }
     .Note-admin li {
-      color: #fff; }
+      color: #111; }
   .Note-adminLink {
     text-decoration: none;
-    color: inherit; }
+    color: #111; }
 
 .Navigator {
   display: inline-flex;

@@ -133,7 +133,6 @@ function validate(values) {
   }
   if (!values.slug) {
     errors.slug = "Enter slug"
-    //Slug must not contain spaces or special characters"
   }
 
   var regex = new RegExp(/[^a-z0-9-]/);
@@ -142,17 +141,8 @@ function validate(values) {
     errors.slug = "Slug must not contain spaces or special characters"
   }
 
-  // if errors has *any* properties, redux form assumes form is invalid
   return errors;
 }
-
-// export default reduxForm({
-//   validate,
-//   form: 'NotesEditForm',
-//   enableReinitialize: true 
-// })(
-//   connect(mapStateToProps, { fetchSubjects, fetchNote, editNote })(EditNote)
-// );
 
 export default connect(mapStateToProps, { fetchSubjects, fetchNote, editNote })(reduxForm({
   validate,

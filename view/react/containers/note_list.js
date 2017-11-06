@@ -71,8 +71,6 @@ class NoteList extends React.Component {
   }
 
   render() {
-    // if (this.props.activeNote) return null;
-
     return (
       <div className="NoteList">
         {this.renderSearch()}
@@ -89,18 +87,3 @@ function mapStateToProps(state) {
     notes: state.notes
   };
 }
-
-// function mapStateToProps(state) {
-//   return {
-//     notes: state.notes,
-//     activeNote: state.activeNote
-//   };
-// }
-
-// // Anything returned from this function will end up as props
-// // on the NoteList container 
-// function mapDispatchToProps(dispatch) {
-//   return bindActionCreators({ selectNote: selectNote}, dispatch)
-// }
-
-// export default connect(mapStateToProps, mapDispatchToProps)(NoteList);

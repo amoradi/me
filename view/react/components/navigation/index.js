@@ -4,6 +4,7 @@ import LoggedInControls from './logged_in_controls';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import { HOME, NOTES, ARTIFACTS, INFO } from '../../constants';
 import Hamburger from '../hamburger';
 import Menu from '../menu';
 
@@ -19,21 +20,17 @@ class Navigation extends React.Component {
       <Menu>
         <ul className="Menu-list">
           <li className="Menu-item">
-            <Link className="Menu-link" to="/">info</Link>
+            <Link className="Menu-link" to={HOME}>home</Link>
           </li>
-          {
-          // <li className="Menu-item">
-          //   <Link className="Menu-link" to="/info">info</Link>
-          // </li>
-          }
           <li className="Menu-item">
-            <Link className="Menu-link" to="/notes">notes</Link>
+            <Link className="Menu-link" to={NOTES}>notes</Link>
           </li>
-          {
-          // <li className="Menu-item">
-          //   <Link className="Menu-link" to="/artifacts">artifacts</Link>
-          // </li>
-          }
+          <li className="Menu-item">
+            <Link className="Menu-link" to={ARTIFACTS}>artifacts</Link>
+          </li>
+          <li className="Menu-item">
+            <Link className="Menu-link" to={INFO}>info</Link>
+          </li>
         </ul>
       </Menu>
     );

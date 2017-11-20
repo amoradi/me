@@ -1,18 +1,33 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-import { IMG_ME_AND_FAM } from '../constants';
+import { 
+  IMG_NOTES,
+  IMG_ARTIFACTS,
+  IMG_INFO, 
+  NOTES, 
+  ARTIFACTS, 
+  INFO
+ } from '../constants';
 
 const Home = (props) => {
   return (
-    <div className="Home Stage-conform">
-      <img
-        className="ResponsiveImage"
-        src={IMG_ME_AND_FAM}
-      />
-      <div className="AtEnds">
-        <p className="AtEnds-content">Aaron Bijan Moradi</p>
-        <p className="AtEnds-content AtEnds-right">Front End Developer</p>
-      </div>
+    <div>
+      <Link to={NOTES} className="Slice Slice--light">
+        <img src={IMG_NOTES} />
+        <div className="Slice-heading">Notes</div>
+        <div className="Slice-meta">facts, jottings & subjects</div>
+      </Link>
+      <Link to={ARTIFACTS} className="Slice">
+        <img src={IMG_ARTIFACTS} />
+        <div className="Slice-heading">Artifacts</div>
+        <div className="Slice-meta">sketches & symbols</div>
+      </Link>
+      <Link to={INFO} className="Slice Slice--alternate">
+        <img src={IMG_INFO} />
+        <div className="Slice-heading">Info</div>
+        <div className="Slice-meta">some lines on me</div>
+      </Link>
     </div>
   );
 }

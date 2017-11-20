@@ -1,0 +1,8 @@
+.Footer {
+  border-top: 1px solid $barrier_color;
+  color: $almost_black;
+  margin-top: 14rem;
+  padding: 2rem 0;
+  text-align: center;
+  @include normal_font;
+}

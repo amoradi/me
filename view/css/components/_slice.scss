@@ -1,0 +1,29 @@
+.Slice {
+  padding: 10rem 2rem;
+  text-align: center;
+  background-color: $aquamarine;
+  display: block;
+  text-decoration: none;
+  color: $almost_black;
+  
+  &:hover {
+    cursor: pointer;
+  }
+
+  &-heading {
+    @include note_heading_font;
+    margin-bottom: 0.5rem;
+  }
+
+  &-meta {
+    font-size: $medium_font;
+  }
+
+  &--light {
+    background-color: $white;
+  }
+
+  &--alternate {
+    background-color: $lightest_gray;
+  }
+}

@@ -41,6 +41,7 @@ class NoteList extends React.Component {
   renderSearch() {
     return <SearchBar
         className='SearchBar'
+        hintText='filter'
         dataSource={this.state.dataSource}
         onChange={this.onHandleChange}
         onRequestSearch={this.onHandleSearch}

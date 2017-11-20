@@ -1,11 +1,11 @@
 @include open_menu(".Stage");
 
 .Stage {
-  margin: 4rem auto 2rem;
+  margin: 0;
   transition: transform $base_transition_duration $ease_in_out_quad;
 
   &-wrap {
-    margin: 0 auto;
+    margin: 4rem auto 2rem;
     width: 100%;
     box-sizing: border-box;
     background-color: $white;
@@ -18,8 +18,12 @@
     @include desktop {
       width: 85%;
     }
-  }
 
+    &:empty {
+      display: none;
+    }
+  }
+  
   &-conform {
     padding: 1rem 1rem 0;
   }

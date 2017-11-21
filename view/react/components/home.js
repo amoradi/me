@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ArrowIcon from 'material-ui/svg-icons/hardware/keyboard-backspace';
 
 import { 
   IMG_NOTES,
@@ -15,17 +16,17 @@ const Home = (props) => {
     <div>
       <Link to={NOTES} className="Slice Slice--light">
         <img src={IMG_NOTES} />
-        <div className="Slice-heading">Notes</div>
+        <div className="Slice-heading">Notes <ArrowIcon className="Slice-forwardIcon" /></div>
         <div className="Slice-meta">facts, jottings & subjects</div>
       </Link>
       <Link to={ARTIFACTS} className="Slice">
         <img src={IMG_ARTIFACTS} />
-        <div className="Slice-heading">Artifacts</div>
+        <div className="Slice-heading">Artifacts <ArrowIcon className="Slice-forwardIcon" /></div>
         <div className="Slice-meta">sketches & symbols</div>
       </Link>
       <Link to={INFO} className="Slice Slice--alternate">
         <img src={IMG_INFO} />
-        <div className="Slice-heading">Info</div>
+        <div className="Slice-heading">Info <ArrowIcon className="Slice-forwardIcon" /></div>
         <div className="Slice-meta">some lines on me</div>
       </Link>
     </div>

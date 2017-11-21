@@ -448,12 +448,23 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   color: #111; }
   .Slice:hover {
     cursor: pointer; }
+  .Slice:hover .Slice-forwardIcon {
+    width: 24px !important;
+    transition: width 200ms ease-in-out; }
   .Slice-heading {
     font: 26px/48px "NHaasGrotesk";
     margin: 2rem 0;
-    margin-bottom: 0.5rem; }
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
   .Slice-meta {
     font-size: 21px; }
+  .Slice-forwardIcon {
+    transform: rotate(180deg);
+    width: 0 !important;
+    position: relative;
+    left: 7px; }
   .Slice--light {
     background-color: #fff; }
   .Slice--alternate {

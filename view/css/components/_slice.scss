@@ -10,13 +10,28 @@
     cursor: pointer;
   }
 
+  &:hover &-forwardIcon {
+    width: 24px !important;
+    transition: width $base_transition_duration ease-in-out;
+  }
+
   &-heading {
     @include note_heading_font;
     margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &-meta {
     font-size: $medium_font;
+  }
+
+  &-forwardIcon {
+    transform: rotate(180deg);
+    width: 0 !important;
+    position: relative;
+    left: 7px;
   }
 
   &--light {

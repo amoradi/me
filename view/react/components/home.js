@@ -15,17 +15,17 @@ const Home = (props) => {
   return (
     <div>
       <Link to={NOTES} className="Slice Slice--light">
-        <img src={IMG_NOTES} />
+        <img className="Slice-icon" src={IMG_NOTES} />
         <div className="Slice-heading">Notes <ArrowIcon className="Slice-forwardIcon" /></div>
         <div className="Slice-meta">facts, jottings & subjects</div>
       </Link>
       <Link to={ARTIFACTS} className="Slice">
-        <img src={IMG_ARTIFACTS} />
+        <img className="Slice-icon" src={IMG_ARTIFACTS} />
         <div className="Slice-heading">Artifacts <ArrowIcon className="Slice-forwardIcon" /></div>
         <div className="Slice-meta">sketches & symbols</div>
       </Link>
       <Link to={INFO} className="Slice Slice--alternate">
-        <img src={IMG_INFO} />
+        <img className="Slice-icon" src={IMG_INFO} />
         <div className="Slice-heading">Info <ArrowIcon className="Slice-forwardIcon" /></div>
         <div className="Slice-meta">some lines on me</div>
       </Link>

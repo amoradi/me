@@ -451,6 +451,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   .Slice:hover .Slice-forwardIcon {
     width: 24px !important;
     transition: width 200ms ease-in-out; }
+  .Slice-icon {
+    max-height: 100px;
+    max-width: 100px; }
   .Slice-heading {
     font: 26px/48px "NHaasGrotesk";
     margin: 2rem 0;

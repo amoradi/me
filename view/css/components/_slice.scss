@@ -15,6 +15,11 @@
     transition: width $base_transition_duration ease-in-out;
   }
 
+  &-icon {
+    max-height: 100px;
+    max-width: 100px;
+  }
+
   &-heading {
     @include note_heading_font;
     margin-bottom: 0.5rem;

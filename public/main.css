@@ -297,6 +297,8 @@ body {
   .Note-body h3, .Note-body h4, .Note-body h5, .Note-body h6 {
     font-family: "NHaasGrotesk";
     margin-top: 2rem; }
+  .Note-body strong {
+    font-weight: 600; }
   .Note-admin {
     list-style-position: inside;
     background-color: transparent;

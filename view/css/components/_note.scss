@@ -60,6 +60,10 @@
       font-family: $display_font_family;
       margin-top: 2rem;
     }
+
+    strong {
+      font-weight: 600;
+    }
   }
 
   &-admin {

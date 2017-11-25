@@ -2,10 +2,12 @@ import React from 'react';
 
 export default class App extends React.Component {
   render() {
+    const { navigation, stage } = this.props;
+
     return (
       <div className="Domain">
-        {this.props.navigation}
-        <section className="Stage">{this.props.stage}</section>
+        {navigation}
+        <section className="Stage">{stage}</section>
       </div>
     );
   }

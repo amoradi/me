@@ -5,7 +5,7 @@
   transition: transform $base_transition_duration $ease_in_out_quad;
 
   @include desktop {
-    transform: none;
+    transform: none !important;
   }
   
   &-wrap {
@@ -20,7 +20,7 @@
     box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.06);
 
     @include desktop {
-      width: 85%;
+      width: calc(100% - 300px);
     }
 
     &:empty {

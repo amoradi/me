@@ -38,14 +38,13 @@
 
   &-subjects {
     @include medium_font;
-    font: 16px/19px "Paul";
+    font: 16px/19px $font_family;
     color: $almost_black;
     line-height: 2;
   }
 
   &-readStat {
     transition: color 0.25s;
-    //font: 13px/39px "NHaasGrotesk";
     font-size: 13px;
     font-family: $detail_font_family;
     color: #39ca99;

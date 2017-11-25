@@ -15,9 +15,11 @@ class Hamburger extends React.Component {
   }
 
   render() {
+    const isOpen = this.state.isOpen ? 'is-open': '';
+
     return (
       <div 
-        className={`Hamburger ${this.state.isOpen ? 'is-open': ''}`}
+        className={`Hamburger ${isOpen}`}
         onClick={this.onToggle}
       >
         <div className="Hamburger-bar"></div>

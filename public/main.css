@@ -34,6 +34,8 @@ body {
 #App {
   font-family: "Source Sans Pro", "Open Sans", sans-serif;
   color: #111; }
+  #App h1, #App h2, #App h3, #App h4, #App h5, #App h6 {
+    font-family: "NHaasGrotesk"; }
 
 .Navigation-links {
   padding-left: 2rem; }
@@ -71,7 +73,7 @@ body {
   transition: transform 200ms cubic-bezier(0.455, 0.03, 0.515, 0.955); }
   @media (min-width: 768px) {
     .Stage {
-      transform: none; } }
+      transform: none !important; } }
   .Stage-wrap {
     margin: 4rem auto 2rem;
     width: 100%;
@@ -84,7 +86,7 @@ body {
     box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.06); }
     @media (min-width: 768px) {
       .Stage-wrap {
-        width: 85%; } }
+        width: calc(100% - 300px); } }
     .Stage-wrap:empty {
       display: none; }
   .Stage-conform {
@@ -131,13 +133,13 @@ body {
     color: #111; }
   .NoteDetail-subjects {
     font: 21px/48px "Source Sans Pro", "Open Sans", sans-serif;
-    font: 16px/19px "Paul";
+    font: 16px/19px "Source Sans Pro", "Open Sans", sans-serif;
     color: #111;
     line-height: 2; }
   .NoteDetail-readStat {
     transition: color 0.25s;
     font-size: 13px;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Source Sans Pro", "Open Sans", sans-serif;
     color: #39ca99;
     line-height: 1;
     display: block;
@@ -147,7 +149,7 @@ body {
     transition: color 0.25s; }
 
 .SearchBar div {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Source Sans Pro", "Open Sans", sans-serif;
   font-size: 14px; }
 
 .Sideways {
@@ -293,6 +295,7 @@ body {
     font-family: "NHaasGrotesk";
     font-weight: 300; }
   .Note-body h3, .Note-body h4, .Note-body h5, .Note-body h6 {
+    font-family: "NHaasGrotesk";
     margin-top: 2rem; }
   .Note-admin {
     list-style-position: inside;
@@ -321,7 +324,7 @@ body {
   align-items: center;
   text-decoration: none;
   position: relative;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Source Sans Pro", "Open Sans", sans-serif;
   transition: color 200ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
   color: #111;
   font-size: 16px; }

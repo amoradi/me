@@ -1,6 +1,5 @@
 import React from 'react';
 import StageControls from './stage_controls';
-import LoggedInControls from './logged_in_controls';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 

@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import ArrowIcon from 'material-ui/svg-icons/hardware/keyboard-backspace';
 
+import Slice from './slice';
 import { 
   IMG_NOTES,
   IMG_ARTIFACTS,
@@ -14,21 +13,26 @@ import {
 const Home = (props) => {
   return (
     <div>
-      <Link to={NOTES} className="Slice Slice--light">
-        <img className="Slice-icon" src={IMG_NOTES} />
-        <div className="Slice-heading">Notes <ArrowIcon className="Slice-forwardIcon" /></div>
-        <div className="Slice-meta">facts, jottings & subjects</div>
-      </Link>
-      <Link to={ARTIFACTS} className="Slice">
-        <img className="Slice-icon" src={IMG_ARTIFACTS} />
-        <div className="Slice-heading">Artifacts <ArrowIcon className="Slice-forwardIcon" /></div>
-        <div className="Slice-meta">sketches & symbols</div>
-      </Link>
-      <Link to={INFO} className="Slice Slice--alternate">
-        <img className="Slice-icon" src={IMG_INFO} />
-        <div className="Slice-heading">Info <ArrowIcon className="Slice-forwardIcon" /></div>
-        <div className="Slice-meta">some lines on me</div>
-      </Link>
+      <Slice 
+        link={NOTES}
+        image={IMG_NOTES}
+        text="Notes"
+        bodyText="facts, jottings & subjects"
+        light
+      />
+      <Slice 
+        link={ARTIFACTS}
+        image={IMG_ARTIFACTS}
+        text="Artifacts"
+        bodyText="sketches & symbols"
+      />
+      <Slice 
+        link={INFO}
+        image={IMG_INFO}
+        text="Info"
+        bodyText="some lines on me"
+        alternate
+      />
     </div>
   );
 }

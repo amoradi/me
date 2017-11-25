@@ -1,4 +1,8 @@
 #App {
   font-family: $font_family;
   color: $almost_black;
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $display_font_family;
+  }
 }

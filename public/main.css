@@ -32,7 +32,7 @@ body {
     box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.06) !important; }
 
 #App {
-  font-family: "Paul";
+  font-family: "Source Sans Pro", "Open Sans", sans-serif;
   color: #111; }
 
 .Navigation-links {
@@ -44,7 +44,7 @@ body {
   list-style-type: none; }
 
 .NavigationLink {
-  font: 18px/48px "Paul";
+  font: 18px/48px "Source Sans Pro", "Open Sans", sans-serif;
   padding-bottom: 4px; }
   .NavigationLink:hover {
     border-bottom: 3px solid aquamarine; }
@@ -93,7 +93,7 @@ body {
     padding: 1rem; }
 
 .SiteTitle {
-  font: 24px/34px "Paul"; }
+  font: 24px/34px "Source Sans Pro", "Open Sans", sans-serif; }
 
 .LoggedInControls {
   display: none; }
@@ -122,7 +122,7 @@ body {
   .NoteDetail a {
     text-decoration: none; }
   .NoteDetail-name {
-    font: 24px/34px "Paul";
+    font: 24px/34px "Source Sans Pro", "Open Sans", sans-serif;
     line-height: 48px;
     font: 17px/23px "NHaasGrotesk";
     line-height: 30px;
@@ -130,14 +130,14 @@ body {
     display: block;
     color: #111; }
   .NoteDetail-subjects {
-    font: 21px/48px "Paul";
+    font: 21px/48px "Source Sans Pro", "Open Sans", sans-serif;
     font: 16px/19px "Paul";
     color: #111;
     line-height: 2; }
   .NoteDetail-readStat {
     transition: color 0.25s;
     font-size: 13px;
-    font-family: "Paul", "Open Sans", sans-serif;
+    font-family: "Open Sans", sans-serif;
     color: #39ca99;
     line-height: 1;
     display: block;
@@ -147,7 +147,7 @@ body {
     transition: color 0.25s; }
 
 .SearchBar div {
-  font-family: "Paul", "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px; }
 
 .Sideways {
@@ -252,7 +252,7 @@ body {
     color: #ccc;
     font-size: 18px;
     font-weight: 300;
-    font-family: "Paul";
+    font-family: "Source Sans Pro", "Open Sans", sans-serif;
     line-height: 48px;
     display: inline-block;
     vertical-align: middle; }
@@ -264,7 +264,7 @@ body {
     border-left: aquamarine 3px solid;
     margin: 2rem 0; }
     .Note-body ul li {
-      font: 16px/1.7 "Paul";
+      font: 16px/1.7 "Source Sans Pro", "Open Sans", sans-serif;
       color: #333; }
       @media (min-width: 768px) {
         .Note-body ul li {
@@ -279,7 +279,7 @@ body {
       .Note-body ul > li {
         margin-left: 20px; } }
   .Note-body p {
-    font: 16px/1.7 "Paul";
+    font: 16px/1.7 "Source Sans Pro", "Open Sans", sans-serif;
     color: #333; }
     @media (min-width: 768px) {
       .Note-body p {
@@ -305,7 +305,7 @@ body {
     margin: 4rem 0 2rem;
     padding: 2em 1em; }
     .Note-admin li {
-      font: 16px/1.7 "Paul";
+      font: 16px/1.7 "Source Sans Pro", "Open Sans", sans-serif;
       color: #333; }
       @media (min-width: 768px) {
         .Note-admin li {
@@ -321,7 +321,7 @@ body {
   align-items: center;
   text-decoration: none;
   position: relative;
-  font-family: "Paul", "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
   transition: color 200ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
   color: #111;
   font-size: 16px; }
@@ -336,7 +336,7 @@ body {
 
 .Form-label, .Form-control,
 .Form select {
-  font: 18px/48px "Paul";
+  font: 18px/48px "Source Sans Pro", "Open Sans", sans-serif;
   line-height: 1.4;
   display: block;
   width: 100%;
@@ -446,7 +446,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   max-width: 100%; }
 
 .AtEnds {
-  font: 16px/1.7 "Paul";
+  font: 16px/1.7 "Source Sans Pro", "Open Sans", sans-serif;
   color: #333;
   display: flex;
   justify-content: space-between; }
@@ -498,4 +498,4 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   margin-top: 14rem;
   padding: 2rem 0;
   text-align: center;
-  font: 18px/48px "Paul"; }
+  font: 18px/48px "Source Sans Pro", "Open Sans", sans-serif; }

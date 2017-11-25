@@ -6,6 +6,10 @@
   z-index: $z-index-just-a-touch;
   height: $min_target_size;
 
+  @include desktop {
+    display: none;
+  }
+
   &:hover {
     cursor: pointer;
   }

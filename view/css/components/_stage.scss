@@ -4,6 +4,10 @@
   margin: 0;
   transition: transform $base_transition_duration $ease_in_out_quad;
 
+  @include desktop {
+    transform: none;
+  }
+  
   &-wrap {
     margin: 4rem auto 2rem;
     width: 100%;

@@ -71,4 +71,11 @@
     transition: transform $base_transition_duration $ease_in_out_quad;
     transform: translateX($menu_width);
   }
+
+  @include desktop {
+    #{$elem} {
+      transition: transform $base_transition_duration $ease_in_out_quad;
+      transform: translateX($menu_width);
+    }
+  }
 }

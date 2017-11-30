@@ -78096,10 +78096,6 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _stage_controls = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./stage_controls\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-
-var _stage_controls2 = _interopRequireDefault(_stage_controls);
-
 var _reactRouterDom = __webpack_require__(38);
 
 var _reactRedux = __webpack_require__(18);

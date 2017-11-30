@@ -54,7 +54,6 @@ class NoteShow extends React.Component {
 
     return (
       <article className="Stage-content Note">
-        <Link to="/notes" className="Navigator"><BackIcon className="Navigator-icon" />notes</Link>
         <h1 className="Note-heading">{`${this.props.note.name}`}
           &nbsp;&nbsp;&nbsp;&nbsp;
           <span className="Note-headingMeta">

@@ -8,18 +8,18 @@ router.param('slug', controller.slug);
 router.param('term', controller.search);
 
 router.route('/')
-  .get(controller.get)
-  .post(checkUser, controller.post)
+	.get(controller.get)
+	.post(checkUser, controller.post);
 
 router.route('/:id')
-  .get(controller.getOne)
-  .put(checkUser, controller.put)
-  .delete(checkUser, controller.delete)
+	.get(controller.getOne)
+	.put(checkUser, controller.put)
+	.delete(checkUser, controller.delete);
 
 router.route('/slug/:slug')
-  .get(controller.getOne)
+	.get(controller.getOne);
 
 router.route('/search/:term')
-  .get(controller.search)
+	.get(controller.search);
 
 module.exports = router;

@@ -5,10 +5,10 @@ import SubjectsReducer from './reducer_subjects';
 import SignedInReducer from './reducer_signed_in';
 
 const rootReducer = combineReducers({
-  notes: NotesReducer,
-  subjects: SubjectsReducer,
-  form: formReducer,
-  isSignedIn: SignedInReducer
+	notes: NotesReducer,
+	subjects: SubjectsReducer,
+	form: formReducer,
+	isSignedIn: SignedInReducer
 });
 
 export default rootReducer;

@@ -27,31 +27,31 @@ const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 injectTapEventPlugin();
 
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <MuiThemeProvider>
-      <BrowserRouter>
-        <div className="Domain">
-          <Hamburger />
-          <Navigation />
-          <div className="Stage">
-            <div className="Stage-wrap">
-              <Switch>
-                <Route exact path={HOME} component={Home} />
-                <Route path="/notes/new" component={AddNewNote} />
-                <Route path="/subjects/new" component={AddNewSubject} />
-                <Route path="/notes/edit/:slug" component={EditNote} />
-                <Route path="/notes/:slug" component={NoteShow} />
-                <Route exact path={NOTES} component={NoteList} />
-                <Route exact path={ARTIFACTS} component={Artifacts} />
-                <Route exact path={INFO} component={Info} />
-                <Route exact path="/sign-in" component={SignIn} />
-              </Switch>
-            </div>
-            <footer className="Footer">made by Aaron Bijan Moradi</footer>
-          </div>
-        </div>
-      </BrowserRouter>
-    </MuiThemeProvider>
-  </Provider>,
-  document.getElementById('App')
+	<Provider store={createStoreWithMiddleware(reducers)}>
+		<MuiThemeProvider>
+			<BrowserRouter>
+				<div className="Domain">
+					<Hamburger />
+					<Navigation />
+					<div className="Stage">
+						<div className="Stage-wrap">
+							<Switch>
+								<Route exact path={HOME} component={Home} />
+								<Route path="/notes/new" component={AddNewNote} />
+								<Route path="/subjects/new" component={AddNewSubject} />
+								<Route path="/notes/edit/:slug" component={EditNote} />
+								<Route path="/notes/:slug" component={NoteShow} />
+								<Route exact path={NOTES} component={NoteList} />
+								<Route exact path={ARTIFACTS} component={Artifacts} />
+								<Route exact path={INFO} component={Info} />
+								<Route exact path="/sign-in" component={SignIn} />
+							</Switch>
+						</div>
+						<footer className="Footer">made by Aaron Bijan Moradi</footer>
+					</div>
+				</div>
+			</BrowserRouter>
+		</MuiThemeProvider>
+	</Provider>,
+	document.getElementById('App')
 );

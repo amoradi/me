@@ -7,38 +7,38 @@ import Hamburger from '../hamburger';
 import Menu from '../menu';
 
 class Navigation extends React.Component {
-  constructor(props) {
-    super(props);
+	constructor(props) {
+		super(props);
 
-    this.state = { showSignOut: true };
-  }
+		this.state = { showSignOut: true };
+	}
 
-  render() {
-    return (
-      <Menu>
-        <ul className="Menu-list">
-          <li className="Menu-item">
-            <Link className="Menu-link" to={HOME}>home</Link>
-          </li>
-          <li className="Menu-item">
-            <Link className="Menu-link" to={NOTES}>notes</Link>
-          </li>
-          <li className="Menu-item">
-            <Link className="Menu-link" to={ARTIFACTS}>artifacts</Link>
-          </li>
-          <li className="Menu-item">
-            <Link className="Menu-link" to={INFO}>info</Link>
-          </li>
-        </ul>
-      </Menu>
-    );
-  }
+	render() {
+		return (
+			<Menu>
+				<ul className="Menu-list">
+					<li className="Menu-item">
+						<Link className="Menu-link" to={HOME}>home</Link>
+					</li>
+					<li className="Menu-item">
+						<Link className="Menu-link" to={NOTES}>notes</Link>
+					</li>
+					<li className="Menu-item">
+						<Link className="Menu-link" to={ARTIFACTS}>artifacts</Link>
+					</li>
+					<li className="Menu-item">
+						<Link className="Menu-link" to={INFO}>info</Link>
+					</li>
+				</ul>
+			</Menu>
+		);
+	}
 }
 
 function mapStateToProps({ isSignedIn }) {
-  return {
-    isSignedIn
-  };
+	return {
+		isSignedIn
+	};
 }
 
 export default connect(mapStateToProps)(Navigation);

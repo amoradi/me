@@ -4,7 +4,7 @@ My personal website. A simple API and front end for taking notes and displaying 
 
 ## Usage
 
-1. `mogod`
+1. `mongod`
 2. `npm run start`
 
 ## Running the tests

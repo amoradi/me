@@ -2,6 +2,11 @@
 
 My personal website. A simple API and front end for taking notes and displaying visual artifacts.
 
+## Usage
+
+1. `mogod`
+2. `npm run start`
+
 ## Running the tests
 
 `tests/api_spec.js` contains test suite to perform CRUD operations on `notes` and `subjects` resources.

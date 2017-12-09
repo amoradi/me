@@ -4,8 +4,9 @@ My personal website. A simple API and front end for taking notes and displaying 
 
 ## Usage
 
-1. `mongod`
-2. `npm run start`
+1. `mongod` start DB
+2. `webpack` bundle js
+3. `npm run start` start app
 
 ## Running the tests
 

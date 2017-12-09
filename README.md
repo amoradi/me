@@ -10,8 +10,8 @@ Run `npm run test`
 
 ### Linting
 
-Run `npm run lint`
-Run `npm run lint-fix`
+- Run `npm run lint` to lint.
+- Run `npm run lint-fix` to fix files.
 
 ## Built With
 
@@ -39,4 +39,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Thanks for the how to Scott Moss](https://github.com/Hendrixer)
+* Thanks for the how to [Scott Moss](https://github.com/Hendrixer)

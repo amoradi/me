@@ -35,7 +35,8 @@ exports.slug = function(req, res, next, slug) {
 };
 
 exports.search = function(req, res, next, term) {
-	Note.find({$text: { $search: term }})
+	Note.find({ name: { $regex: term, $options: 'i' }})
+		.sort({name: 'ascending'})
 		.populate('subjects')
 		.exec()
 		.then(function(notes){
@@ -47,6 +48,7 @@ exports.search = function(req, res, next, term) {
 
 exports.get = function(req, res, next) {
 	Note.find({})
+		.sort({name: 'ascending'})
 		.populate('subjects')
 		.exec()
 		.then(function(notes){

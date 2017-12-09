@@ -2841,7 +2841,7 @@ function getPooledWarningPropertyDefinition(propName, getVal) {
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 exports.SIGNED_IN = exports.EDIT_NOTE = exports.DELETE_NOTE = exports.CREATE_SUBJECT = exports.CREATE_NOTE = exports.FETCH_SUBJECTS = exports.FETCH_NOTE = exports.FETCH_SEARCHED_NOTES = exports.FETCH_NOTES = undefined;
 exports.fetchNotes = fetchNotes;
@@ -2873,114 +2873,114 @@ var EDIT_NOTE = exports.EDIT_NOTE = 'EDIT_NOTE';
 var SIGNED_IN = exports.SIGNED_IN = 'SIGNED_IN';
 
 function fetchNotes() {
-  var request = _axios2.default.get('/api/notes');
+	var request = _axios2.default.get('/api/notes');
 
-  return {
-    type: FETCH_NOTES,
-    payload: request
-  };
+	return {
+		type: FETCH_NOTES,
+		payload: request
+	};
 }
 
 function fetchSearchedNotes(term) {
-  var request = _axios2.default.get('/api/notes/search/' + term);
+	var request = _axios2.default.get('/api/notes/search/' + term);
 
-  return {
-    type: FETCH_SEARCHED_NOTES,
-    payload: request
-  };
+	return {
+		type: FETCH_SEARCHED_NOTES,
+		payload: request
+	};
 }
 
 function fetchNote(slug) {
-  var request = _axios2.default.get('/api/notes/slug/' + slug);
+	var request = _axios2.default.get('/api/notes/slug/' + slug);
 
-  return {
-    type: FETCH_NOTE,
-    payload: request
-  };
+	return {
+		type: FETCH_NOTE,
+		payload: request
+	};
 }
 
 function createNote(values, callback) {
-  var request = (0, _axios2.default)({
-    method: 'post',
-    url: '/api/notes/',
-    data: values,
-    headers: { Authorization: "Bearer " + window.localStorage[_constants.LS_NOTES_TOKEN] }
-  }).then(function () {
-    return callback();
-  });
+	var request = (0, _axios2.default)({
+		method: 'post',
+		url: '/api/notes/',
+		data: values,
+		headers: { Authorization: 'Bearer ' + window.localStorage[_constants.LS_NOTES_TOKEN] }
+	}).then(function () {
+		return callback();
+	});
 
-  return {
-    type: CREATE_NOTE,
-    payload: request
-  };
+	return {
+		type: CREATE_NOTE,
+		payload: request
+	};
 }
 
 function deleteNote(id, callback) {
-  var request = (0, _axios2.default)({
-    method: 'delete',
-    url: '/api/notes/' + id,
-    headers: { Authorization: "Bearer " + window.localStorage[_constants.LS_NOTES_TOKEN] }
-  }).then(function () {
-    return callback();
-  });
+	var request = (0, _axios2.default)({
+		method: 'delete',
+		url: '/api/notes/' + id,
+		headers: { Authorization: 'Bearer ' + window.localStorage[_constants.LS_NOTES_TOKEN] }
+	}).then(function () {
+		return callback();
+	});
 
-  return {
-    type: DELETE_NOTE,
-    payload: request
-  };
+	return {
+		type: DELETE_NOTE,
+		payload: request
+	};
 }
 
 function editNote(id, values, callback) {
-  var request = (0, _axios2.default)({
-    method: 'put',
-    url: '/api/notes/' + id,
-    data: values,
-    headers: { Authorization: "Bearer " + window.localStorage[_constants.LS_NOTES_TOKEN] }
-  }).then(function () {
-    return callback();
-  });
+	var request = (0, _axios2.default)({
+		method: 'put',
+		url: '/api/notes/' + id,
+		data: values,
+		headers: { Authorization: 'Bearer ' + window.localStorage[_constants.LS_NOTES_TOKEN] }
+	}).then(function () {
+		return callback();
+	});
 
-  return {
-    type: EDIT_NOTE,
-    payload: request
-  };
+	return {
+		type: EDIT_NOTE,
+		payload: request
+	};
 }
 
 function createSubject(values, callback) {
-  var request = (0, _axios2.default)({
-    method: 'post',
-    url: '/api/subjects/',
-    data: values,
-    headers: { Authorization: "Bearer " + window.localStorage[_constants.LS_NOTES_TOKEN] }
-  }).then(function () {
-    return callback();
-  });
+	var request = (0, _axios2.default)({
+		method: 'post',
+		url: '/api/subjects/',
+		data: values,
+		headers: { Authorization: 'Bearer ' + window.localStorage[_constants.LS_NOTES_TOKEN] }
+	}).then(function () {
+		return callback();
+	});
 
-  return {
-    type: CREATE_SUBJECT,
-    payload: request
-  };
+	return {
+		type: CREATE_SUBJECT,
+		payload: request
+	};
 }
 
 function fetchSubjects() {
-  var request = _axios2.default.get('/api/subjects');
+	var request = _axios2.default.get('/api/subjects');
 
-  return {
-    type: FETCH_SUBJECTS,
-    payload: request
-  };
+	return {
+		type: FETCH_SUBJECTS,
+		payload: request
+	};
 }
 
 function signIn(values, callback) {
-  var request = _axios2.default.post('/auth/signin', values).then(function (resp) {
-    window.localStorage.setItem(_constants.LS_NOTES_TOKEN, resp.data.token);
-    callback();
-  });
+	var request = _axios2.default.post('/auth/signin', values).then(function (resp) {
+		window.localStorage.setItem(_constants.LS_NOTES_TOKEN, resp.data.token);
+		callback();
+	});
 
-  return {
-    type: SIGNED_IN,
-    payload: request
-  };
+	return {
+		type: SIGNED_IN,
+		payload: request
+	};
 }
 
 /***/ }),
@@ -35785,7 +35785,7 @@ var silenceEvent = function silenceEvent(event) {
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -35803,44 +35803,44 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Hamburger = function (_React$Component) {
-  _inherits(Hamburger, _React$Component);
+	_inherits(Hamburger, _React$Component);
 
-  function Hamburger(props) {
-    _classCallCheck(this, Hamburger);
+	function Hamburger(props) {
+		_classCallCheck(this, Hamburger);
 
-    var _this = _possibleConstructorReturn(this, (Hamburger.__proto__ || Object.getPrototypeOf(Hamburger)).call(this, props));
+		var _this = _possibleConstructorReturn(this, (Hamburger.__proto__ || Object.getPrototypeOf(Hamburger)).call(this, props));
 
-    _this.state = {
-      isOpen: false
-    };
+		_this.state = {
+			isOpen: false
+		};
 
-    _this.onToggle = _this.toggle.bind(_this);
-    return _this;
-  }
+		_this.onToggle = _this.toggle.bind(_this);
+		return _this;
+	}
 
-  _createClass(Hamburger, [{
-    key: 'toggle',
-    value: function toggle() {
-      this.setState({ isOpen: !this.state.isOpen });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var isOpen = this.state.isOpen ? 'is-open' : '';
+	_createClass(Hamburger, [{
+		key: 'toggle',
+		value: function toggle() {
+			this.setState({ isOpen: !this.state.isOpen });
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			var isOpen = this.state.isOpen ? 'is-open' : '';
 
-      return _react2.default.createElement(
-        'div',
-        {
-          className: 'Hamburger ' + isOpen,
-          onClick: this.onToggle
-        },
-        _react2.default.createElement('div', { className: 'Hamburger-bar' }),
-        _react2.default.createElement('div', { className: 'Hamburger-bar' })
-      );
-    }
-  }]);
+			return _react2.default.createElement(
+				'div',
+				{
+					className: 'Hamburger ' + isOpen,
+					onClick: this.onToggle
+				},
+				_react2.default.createElement('div', { className: 'Hamburger-bar' }),
+				_react2.default.createElement('div', { className: 'Hamburger-bar' })
+			);
+		}
+	}]);
 
-  return Hamburger;
+	return Hamburger;
 }(_react2.default.Component);
 
 exports.default = Hamburger;
@@ -36046,48 +36046,48 @@ var createStoreWithMiddleware = (0, _redux.applyMiddleware)(_reduxPromise2.defau
 (0, _reactTapEventPlugin2.default)();
 
 _reactDom2.default.render(_react2.default.createElement(
-  _reactRedux.Provider,
-  { store: createStoreWithMiddleware(_reducers2.default) },
-  _react2.default.createElement(
-    _MuiThemeProvider2.default,
-    null,
-    _react2.default.createElement(
-      _reactRouterDom.BrowserRouter,
-      null,
-      _react2.default.createElement(
-        'div',
-        { className: 'Domain' },
-        _react2.default.createElement(_hamburger2.default, null),
-        _react2.default.createElement(_navigation2.default, null),
-        _react2.default.createElement(
-          'div',
-          { className: 'Stage' },
-          _react2.default.createElement(
-            'div',
-            { className: 'Stage-wrap' },
-            _react2.default.createElement(
-              _reactRouterDom.Switch,
-              null,
-              _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: _constants.HOME, component: _home2.default }),
-              _react2.default.createElement(_reactRouterDom.Route, { path: '/notes/new', component: _add_new_note2.default }),
-              _react2.default.createElement(_reactRouterDom.Route, { path: '/subjects/new', component: _add_new_subject2.default }),
-              _react2.default.createElement(_reactRouterDom.Route, { path: '/notes/edit/:slug', component: _note_edit2.default }),
-              _react2.default.createElement(_reactRouterDom.Route, { path: '/notes/:slug', component: _note_show2.default }),
-              _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: _constants.NOTES, component: _note_list2.default }),
-              _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: _constants.ARTIFACTS, component: _artifacts2.default }),
-              _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: _constants.INFO, component: _info2.default }),
-              _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/sign-in', component: _sign_in2.default })
-            )
-          ),
-          _react2.default.createElement(
-            'footer',
-            { className: 'Footer' },
-            'made by Aaron Bijan Moradi'
-          )
-        )
-      )
-    )
-  )
+	_reactRedux.Provider,
+	{ store: createStoreWithMiddleware(_reducers2.default) },
+	_react2.default.createElement(
+		_MuiThemeProvider2.default,
+		null,
+		_react2.default.createElement(
+			_reactRouterDom.BrowserRouter,
+			null,
+			_react2.default.createElement(
+				'div',
+				{ className: 'Domain' },
+				_react2.default.createElement(_hamburger2.default, null),
+				_react2.default.createElement(_navigation2.default, null),
+				_react2.default.createElement(
+					'div',
+					{ className: 'Stage' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'Stage-wrap' },
+						_react2.default.createElement(
+							_reactRouterDom.Switch,
+							null,
+							_react2.default.createElement(_reactRouterDom.Route, { exact: true, path: _constants.HOME, component: _home2.default }),
+							_react2.default.createElement(_reactRouterDom.Route, { path: '/notes/new', component: _add_new_note2.default }),
+							_react2.default.createElement(_reactRouterDom.Route, { path: '/subjects/new', component: _add_new_subject2.default }),
+							_react2.default.createElement(_reactRouterDom.Route, { path: '/notes/edit/:slug', component: _note_edit2.default }),
+							_react2.default.createElement(_reactRouterDom.Route, { path: '/notes/:slug', component: _note_show2.default }),
+							_react2.default.createElement(_reactRouterDom.Route, { exact: true, path: _constants.NOTES, component: _note_list2.default }),
+							_react2.default.createElement(_reactRouterDom.Route, { exact: true, path: _constants.ARTIFACTS, component: _artifacts2.default }),
+							_react2.default.createElement(_reactRouterDom.Route, { exact: true, path: _constants.INFO, component: _info2.default }),
+							_react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/sign-in', component: _sign_in2.default })
+						)
+					),
+					_react2.default.createElement(
+						'footer',
+						{ className: 'Footer' },
+						'made by Aaron Bijan Moradi'
+					)
+				)
+			)
+		)
+	)
 ), document.getElementById('App'));
 
 /***/ }),
@@ -52005,7 +52005,7 @@ module.exports = isArray;
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -52023,36 +52023,36 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var App = function (_React$Component) {
-  _inherits(App, _React$Component);
+	_inherits(App, _React$Component);
 
-  function App() {
-    _classCallCheck(this, App);
+	function App() {
+		_classCallCheck(this, App);
 
-    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
-  }
+		return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+	}
 
-  _createClass(App, [{
-    key: "render",
-    value: function render() {
-      var _props = this.props,
-          navigation = _props.navigation,
-          stage = _props.stage;
+	_createClass(App, [{
+		key: "render",
+		value: function render() {
+			var _props = this.props,
+			    navigation = _props.navigation,
+			    stage = _props.stage;
 
 
-      return _react2.default.createElement(
-        "div",
-        { className: "Domain" },
-        navigation,
-        _react2.default.createElement(
-          "section",
-          { className: "Stage" },
-          stage
-        )
-      );
-    }
-  }]);
+			return _react2.default.createElement(
+				"div",
+				{ className: "Domain" },
+				navigation,
+				_react2.default.createElement(
+					"section",
+					{ className: "Stage" },
+					stage
+				)
+			);
+		}
+	}]);
 
-  return App;
+	return App;
 }(_react2.default.Component);
 
 exports.default = App;
@@ -52065,7 +52065,7 @@ exports.default = App;
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _react = __webpack_require__(1);
@@ -52077,28 +52077,28 @@ var _constants = __webpack_require__(62);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Info = function Info(props) {
-  return _react2.default.createElement(
-    'div',
-    { className: 'Stage-conform' },
-    _react2.default.createElement('img', {
-      className: 'ResponsiveImage',
-      src: _constants.IMG_ME_AND_FAM
-    }),
-    _react2.default.createElement(
-      'div',
-      { className: 'AtEnds' },
-      _react2.default.createElement(
-        'p',
-        { className: 'AtEnds-content' },
-        'Aaron Bijan Moradi'
-      ),
-      _react2.default.createElement(
-        'p',
-        { className: 'AtEnds-content AtEnds-right' },
-        'Front End Developer'
-      )
-    )
-  );
+	return _react2.default.createElement(
+		'div',
+		{ className: 'Stage-conform' },
+		_react2.default.createElement('img', {
+			className: 'ResponsiveImage',
+			src: _constants.IMG_ME_AND_FAM
+		}),
+		_react2.default.createElement(
+			'div',
+			{ className: 'AtEnds' },
+			_react2.default.createElement(
+				'p',
+				{ className: 'AtEnds-content' },
+				'Aaron Bijan Moradi'
+			),
+			_react2.default.createElement(
+				'p',
+				{ className: 'AtEnds-content AtEnds-right' },
+				'Front End Developer'
+			)
+		)
+	);
 };
 
 exports.default = Info;
@@ -52111,7 +52111,7 @@ exports.default = Info;
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -52145,113 +52145,111 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var NoteList = function (_React$Component) {
-  _inherits(NoteList, _React$Component);
+	_inherits(NoteList, _React$Component);
 
-  function NoteList(props) {
-    _classCallCheck(this, NoteList);
+	function NoteList(props) {
+		_classCallCheck(this, NoteList);
 
-    var _this = _possibleConstructorReturn(this, (NoteList.__proto__ || Object.getPrototypeOf(NoteList)).call(this, props));
+		var _this = _possibleConstructorReturn(this, (NoteList.__proto__ || Object.getPrototypeOf(NoteList)).call(this, props));
 
-    _this.state = {
-      dataSource: ['you', 'seed', 'man'],
-      searchText: ''
-    };
+		_this.state = {
+			dataSource: ['you', 'seed', 'man'],
+			searchText: ''
+		};
 
-    _this.onHandleChange = _this.handleChange.bind(_this);
-    _this.onHandleSearch = _this.handleSearch.bind(_this);
-    return _this;
-  }
+		_this.onHandleChange = _this.handleChange.bind(_this);
+		_this.onHandleSearch = _this.handleSearch.bind(_this);
+		return _this;
+	}
 
-  _createClass(NoteList, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      this.props.fetchNotes();
-    }
-  }, {
-    key: 'handleChange',
-    value: function handleChange(term) {
-      this.setState({ searchText: term });
+	_createClass(NoteList, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			this.props.fetchNotes();
+		}
+	}, {
+		key: 'handleChange',
+		value: function handleChange(term) {
+			this.setState({ searchText: term });
 
-      if (term) {
-        this.handleSearch(term);
-      } else {
-        this.props.fetchNotes();
-      }
-    }
-  }, {
-    key: 'handleSearch',
-    value: function handleSearch() {
-      var term = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.state.searchText;
+			if (term) {
+				this.handleSearch(term);
+			} else {
+				this.props.fetchNotes();
+			}
+		}
+	}, {
+		key: 'handleSearch',
+		value: function handleSearch() {
+			var term = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.state.searchText;
 
-      this.props.fetchSearchedNotes(term);
-    }
-  }, {
-    key: 'renderSearch',
-    value: function renderSearch() {
-      return _react2.default.createElement(_materialUiSearchBar2.default, {
-        className: 'SearchBar',
-        hintText: 'filter',
-        dataSource: this.state.dataSource,
-        onChange: this.onHandleChange,
-        onRequestSearch: this.onHandleSearch,
-        style: {
-          margin: '0 auto',
-          width: '100%',
-          borderRadius: '0',
-          boxShadow: 'none',
-          position: 'relative',
-          top: '5px',
-          fontSize: '14px'
-        }
-      });
-    }
-  }, {
-    key: 'renderList',
-    value: function renderList() {
-      return _lodash2.default.map(this.props.notes, function (note) {
-        return _react2.default.createElement(
-          _reactRouterDom.Link,
-          { 'data-note-id': note._id, to: '/notes/' + note.slug,
-            key: note._id,
-            className: 'NoteList-note NoteDetail' },
-          _react2.default.createElement(
-            'span',
-            { className: 'NoteDetail-name' },
-            note.name
-          ),
-          _react2.default.createElement(
-            'span',
-            { className: 'NoteDetail-subjects' },
-            note.subjects.map(function (sub) {
-              return sub.name;
-            }).join(' ' + String.fromCharCode(183) + ' ')
-          )
-        );
-      });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        { className: 'NoteList' },
-        this.renderSearch(),
-        this.renderList()
-      );
-    }
-  }]);
+			this.props.fetchSearchedNotes(term);
+		}
+	}, {
+		key: 'renderSearch',
+		value: function renderSearch() {
+			return _react2.default.createElement(_materialUiSearchBar2.default, {
+				className: 'SearchBar',
+				hintText: 'filter',
+				dataSource: this.state.dataSource,
+				onChange: this.onHandleChange,
+				onRequestSearch: this.onHandleSearch,
+				style: {
+					margin: '0 auto',
+					width: '100%',
+					borderRadius: '0',
+					boxShadow: 'none',
+					position: 'relative',
+					top: '5px',
+					fontSize: '14px'
+				}
+			});
+		}
+	}, {
+		key: 'renderList',
+		value: function renderList() {
+			return _lodash2.default.map(this.props.notes, function (note) {
+				return _react2.default.createElement(
+					_reactRouterDom.Link,
+					{ 'data-note-id': note._id, to: '/notes/' + note.slug,
+						key: note._id,
+						className: 'NoteList-note NoteDetail' },
+					_react2.default.createElement(
+						'span',
+						{ className: 'NoteDetail-name' },
+						note.name
+					),
+					_react2.default.createElement(
+						'span',
+						{ className: 'NoteDetail-subjects' },
+						note.subjects.map(function (sub) {
+							return sub.name;
+						}).join(' ' + String.fromCharCode(183) + ' ')
+					)
+				);
+			});
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			return _react2.default.createElement(
+				'div',
+				{ className: 'NoteList' },
+				this.renderSearch(),
+				this.renderList()
+			);
+		}
+	}]);
 
-  return NoteList;
+	return NoteList;
 }(_react2.default.Component);
 
+var mapStateToProps = function mapStateToProps(_ref) {
+	var notes = _ref.notes;
+	return { notes: notes };
+};
+
 exports.default = (0, _reactRedux.connect)(mapStateToProps, { fetchNotes: _actions.fetchNotes, fetchSearchedNotes: _actions.fetchSearchedNotes })(NoteList);
-
-
-function mapStateToProps(state) {
-  return {
-    notes: state.notes
-  };
-}
 
 /***/ }),
 /* 444 */
@@ -69375,7 +69373,7 @@ module.exports = {
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -69393,26 +69391,26 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var EditNote = function (_React$Component) {
-  _inherits(EditNote, _React$Component);
+	_inherits(EditNote, _React$Component);
 
-  function EditNote() {
-    _classCallCheck(this, EditNote);
+	function EditNote() {
+		_classCallCheck(this, EditNote);
 
-    return _possibleConstructorReturn(this, (EditNote.__proto__ || Object.getPrototypeOf(EditNote)).apply(this, arguments));
-  }
+		return _possibleConstructorReturn(this, (EditNote.__proto__ || Object.getPrototypeOf(EditNote)).apply(this, arguments));
+	}
 
-  _createClass(EditNote, [{
-    key: "render",
-    value: function render() {
-      return _react2.default.createElement(
-        "a",
-        { className: "Control-heading", href: "#" },
-        "edit note"
-      );
-    }
-  }]);
+	_createClass(EditNote, [{
+		key: "render",
+		value: function render() {
+			return _react2.default.createElement(
+				"a",
+				{ className: "Control-heading", href: "#" },
+				"edit note"
+			);
+		}
+	}]);
 
-  return EditNote;
+	return EditNote;
 }(_react2.default.Component);
 
 exports.default = EditNote;
@@ -69425,7 +69423,7 @@ exports.default = EditNote;
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _react = __webpack_require__(1);
@@ -69435,13 +69433,13 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var DeleteNote = function DeleteNote(_ref) {
-  var onClick = _ref.onClick;
+	var onClick = _ref.onClick;
 
-  return _react2.default.createElement(
-    "span",
-    { className: "Control-heading", onClick: onClick },
-    "delete note"
-  );
+	return _react2.default.createElement(
+		"span",
+		{ className: "Control-heading", onClick: onClick },
+		"delete note"
+	);
 };
 
 exports.default = DeleteNote;
@@ -78023,7 +78021,7 @@ exports.default = (0, _reduxForm.reduxForm)({
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -78041,40 +78039,40 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var ProjectList = function (_React$Component) {
-  _inherits(ProjectList, _React$Component);
+	_inherits(ProjectList, _React$Component);
 
-  function ProjectList() {
-    _classCallCheck(this, ProjectList);
+	function ProjectList() {
+		_classCallCheck(this, ProjectList);
 
-    return _possibleConstructorReturn(this, (ProjectList.__proto__ || Object.getPrototypeOf(ProjectList)).apply(this, arguments));
-  }
+		return _possibleConstructorReturn(this, (ProjectList.__proto__ || Object.getPrototypeOf(ProjectList)).apply(this, arguments));
+	}
 
-  _createClass(ProjectList, [{
-    key: "render",
-    value: function render() {
-      return _react2.default.createElement(
-        "article",
-        { className: "Stage-content" },
-        _react2.default.createElement(
-          "h2",
-          null,
-          "Coming Soon"
-        ),
-        _react2.default.createElement(
-          "small",
-          null,
-          "(surely not too long from now)"
-        ),
-        _react2.default.createElement("br", null),
-        _react2.default.createElement("br", null),
-        _react2.default.createElement("br", null),
-        _react2.default.createElement("br", null),
-        _react2.default.createElement("br", null)
-      );
-    }
-  }]);
+	_createClass(ProjectList, [{
+		key: "render",
+		value: function render() {
+			return _react2.default.createElement(
+				"article",
+				{ className: "Stage-content" },
+				_react2.default.createElement(
+					"h2",
+					null,
+					"Coming Soon"
+				),
+				_react2.default.createElement(
+					"small",
+					null,
+					"(surely not too long from now)"
+				),
+				_react2.default.createElement("br", null),
+				_react2.default.createElement("br", null),
+				_react2.default.createElement("br", null),
+				_react2.default.createElement("br", null),
+				_react2.default.createElement("br", null)
+			);
+		}
+	}]);
 
-  return ProjectList;
+	return ProjectList;
 }(_react2.default.Component);
 
 exports.default = ProjectList;
@@ -78087,7 +78085,7 @@ exports.default = ProjectList;
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -78119,76 +78117,76 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Navigation = function (_React$Component) {
-  _inherits(Navigation, _React$Component);
+	_inherits(Navigation, _React$Component);
 
-  function Navigation(props) {
-    _classCallCheck(this, Navigation);
+	function Navigation(props) {
+		_classCallCheck(this, Navigation);
 
-    var _this = _possibleConstructorReturn(this, (Navigation.__proto__ || Object.getPrototypeOf(Navigation)).call(this, props));
+		var _this = _possibleConstructorReturn(this, (Navigation.__proto__ || Object.getPrototypeOf(Navigation)).call(this, props));
 
-    _this.state = { showSignOut: true };
-    return _this;
-  }
+		_this.state = { showSignOut: true };
+		return _this;
+	}
 
-  _createClass(Navigation, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        _menu2.default,
-        null,
-        _react2.default.createElement(
-          'ul',
-          { className: 'Menu-list' },
-          _react2.default.createElement(
-            'li',
-            { className: 'Menu-item' },
-            _react2.default.createElement(
-              _reactRouterDom.Link,
-              { className: 'Menu-link', to: _constants.HOME },
-              'home'
-            )
-          ),
-          _react2.default.createElement(
-            'li',
-            { className: 'Menu-item' },
-            _react2.default.createElement(
-              _reactRouterDom.Link,
-              { className: 'Menu-link', to: _constants.NOTES },
-              'notes'
-            )
-          ),
-          _react2.default.createElement(
-            'li',
-            { className: 'Menu-item' },
-            _react2.default.createElement(
-              _reactRouterDom.Link,
-              { className: 'Menu-link', to: _constants.ARTIFACTS },
-              'artifacts'
-            )
-          ),
-          _react2.default.createElement(
-            'li',
-            { className: 'Menu-item' },
-            _react2.default.createElement(
-              _reactRouterDom.Link,
-              { className: 'Menu-link', to: _constants.INFO },
-              'info'
-            )
-          )
-        )
-      );
-    }
-  }]);
+	_createClass(Navigation, [{
+		key: 'render',
+		value: function render() {
+			return _react2.default.createElement(
+				_menu2.default,
+				null,
+				_react2.default.createElement(
+					'ul',
+					{ className: 'Menu-list' },
+					_react2.default.createElement(
+						'li',
+						{ className: 'Menu-item' },
+						_react2.default.createElement(
+							_reactRouterDom.Link,
+							{ className: 'Menu-link', to: _constants.HOME },
+							'home'
+						)
+					),
+					_react2.default.createElement(
+						'li',
+						{ className: 'Menu-item' },
+						_react2.default.createElement(
+							_reactRouterDom.Link,
+							{ className: 'Menu-link', to: _constants.NOTES },
+							'notes'
+						)
+					),
+					_react2.default.createElement(
+						'li',
+						{ className: 'Menu-item' },
+						_react2.default.createElement(
+							_reactRouterDom.Link,
+							{ className: 'Menu-link', to: _constants.ARTIFACTS },
+							'artifacts'
+						)
+					),
+					_react2.default.createElement(
+						'li',
+						{ className: 'Menu-item' },
+						_react2.default.createElement(
+							_reactRouterDom.Link,
+							{ className: 'Menu-link', to: _constants.INFO },
+							'info'
+						)
+					)
+				)
+			);
+		}
+	}]);
 
-  return Navigation;
+	return Navigation;
 }(_react2.default.Component);
 
 function mapStateToProps(_ref) {
-  var isSignedIn = _ref.isSignedIn;
+	var isSignedIn = _ref.isSignedIn;
 
-  return {
-    isSignedIn: isSignedIn
-  };
+	return {
+		isSignedIn: isSignedIn
+	};
 }
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(Navigation);
@@ -78201,7 +78199,7 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps)(Navigation);
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _react = __webpack_require__(1);
@@ -78211,11 +78209,11 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Menu = function Menu(props) {
-  return _react2.default.createElement(
-    "div",
-    { className: "Menu" },
-    props.children
-  );
+	return _react2.default.createElement(
+		"div",
+		{ className: "Menu" },
+		props.children
+	);
 };
 
 exports.default = Menu;
@@ -78228,7 +78226,7 @@ exports.default = Menu;
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -78254,77 +78252,77 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var SignIn = function (_React$Component) {
-  _inherits(SignIn, _React$Component);
+	_inherits(SignIn, _React$Component);
 
-  function SignIn(props) {
-    _classCallCheck(this, SignIn);
+	function SignIn(props) {
+		_classCallCheck(this, SignIn);
 
-    var _this = _possibleConstructorReturn(this, (SignIn.__proto__ || Object.getPrototypeOf(SignIn)).call(this, props));
+		var _this = _possibleConstructorReturn(this, (SignIn.__proto__ || Object.getPrototypeOf(SignIn)).call(this, props));
 
-    _this.onHandleSubmit = _this.handleSubmit.bind(_this);
-    return _this;
-  }
+		_this.onHandleSubmit = _this.handleSubmit.bind(_this);
+		return _this;
+	}
 
-  _createClass(SignIn, [{
-    key: 'handleSubmit',
-    value: function handleSubmit(evt) {
-      var _this2 = this;
+	_createClass(SignIn, [{
+		key: 'handleSubmit',
+		value: function handleSubmit(evt) {
+			var _this2 = this;
 
-      evt.preventDefault();
+			evt.preventDefault();
 
-      this.props.signIn({
-        username: this.refs.username.value,
-        password: this.refs.password.value
-      }, function () {
-        _this2.props.history.push('/notes/');
-      });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        { className: 'SignIn' },
-        _react2.default.createElement(
-          'form',
-          { className: 'Form AddNewNote', onSubmit: this.onHandleSubmit },
-          _react2.default.createElement(
-            'div',
-            { className: 'Form-group' },
-            _react2.default.createElement(
-              'label',
-              { className: 'Form-label' },
-              'Username'
-            ),
-            _react2.default.createElement('input', {
-              ref: 'username',
-              className: 'Form-control',
-              type: 'text',
-              name: 'username'
-            })
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'Form-group' },
-            _react2.default.createElement(
-              'label',
-              { className: 'Form-label' },
-              'Password'
-            ),
-            _react2.default.createElement('input', {
-              ref: 'password',
-              className: 'Form-control',
-              type: 'text',
-              name: 'password'
-            })
-          ),
-          _react2.default.createElement('input', { type: 'submit', className: 'Form-button', value: 'Sign In' })
-        )
-      );
-    }
-  }]);
+			this.props.signIn({
+				username: this.refs.username.value,
+				password: this.refs.password.value
+			}, function () {
+				_this2.props.history.push('/notes/');
+			});
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			return _react2.default.createElement(
+				'div',
+				{ className: 'SignIn' },
+				_react2.default.createElement(
+					'form',
+					{ className: 'Form AddNewNote', onSubmit: this.onHandleSubmit },
+					_react2.default.createElement(
+						'div',
+						{ className: 'Form-group' },
+						_react2.default.createElement(
+							'label',
+							{ className: 'Form-label' },
+							'Username'
+						),
+						_react2.default.createElement('input', {
+							ref: 'username',
+							className: 'Form-control',
+							type: 'text',
+							name: 'username'
+						})
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'Form-group' },
+						_react2.default.createElement(
+							'label',
+							{ className: 'Form-label' },
+							'Password'
+						),
+						_react2.default.createElement('input', {
+							ref: 'password',
+							className: 'Form-control',
+							type: 'text',
+							name: 'password'
+						})
+					),
+					_react2.default.createElement('input', { type: 'submit', className: 'Form-button', value: 'Sign In' })
+				)
+			);
+		}
+	}]);
 
-  return SignIn;
+	return SignIn;
 }(_react2.default.Component);
 
 exports.default = (0, _reactRedux.connect)(null, { signIn: _actions.signIn })(SignIn);
@@ -78337,7 +78335,7 @@ exports.default = (0, _reactRedux.connect)(null, { signIn: _actions.signIn })(Si
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _react = __webpack_require__(1);
@@ -78353,30 +78351,30 @@ var _constants = __webpack_require__(62);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Home = function Home(props) {
-  return _react2.default.createElement(
-    'div',
-    null,
-    _react2.default.createElement(_slice2.default, {
-      link: _constants.NOTES,
-      image: _constants.IMG_NOTES,
-      text: 'Notes',
-      bodyText: 'facts, jottings & subjects',
-      light: true
-    }),
-    _react2.default.createElement(_slice2.default, {
-      link: _constants.ARTIFACTS,
-      image: _constants.IMG_ARTIFACTS,
-      text: 'Artifacts',
-      bodyText: 'sketches & symbols'
-    }),
-    _react2.default.createElement(_slice2.default, {
-      link: _constants.INFO,
-      image: _constants.IMG_INFO,
-      text: 'Info',
-      bodyText: 'some lines on me',
-      alternate: true
-    })
-  );
+	return _react2.default.createElement(
+		'div',
+		null,
+		_react2.default.createElement(_slice2.default, {
+			link: _constants.NOTES,
+			image: _constants.IMG_NOTES,
+			text: 'Notes',
+			bodyText: 'facts, jottings & subjects',
+			light: true
+		}),
+		_react2.default.createElement(_slice2.default, {
+			link: _constants.ARTIFACTS,
+			image: _constants.IMG_ARTIFACTS,
+			text: 'Artifacts',
+			bodyText: 'sketches & symbols'
+		}),
+		_react2.default.createElement(_slice2.default, {
+			link: _constants.INFO,
+			image: _constants.IMG_INFO,
+			text: 'Info',
+			bodyText: 'some lines on me',
+			alternate: true
+		})
+	);
 };
 
 exports.default = Home;
@@ -78389,7 +78387,7 @@ exports.default = Home;
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _react = __webpack_require__(1);
@@ -78409,35 +78407,35 @@ var _classnames2 = _interopRequireDefault(_classnames);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Slice = function Slice(_ref) {
-  var link = _ref.link,
-      image = _ref.image,
-      text = _ref.text,
-      bodyText = _ref.bodyText,
-      light = _ref.light,
-      alternate = _ref.alternate;
+	var link = _ref.link,
+	    image = _ref.image,
+	    text = _ref.text,
+	    bodyText = _ref.bodyText,
+	    light = _ref.light,
+	    alternate = _ref.alternate;
 
-  var classNames = (0, _classnames2.default)("Slice", {
-    "Slice--light": light,
-    "Slice--alternate": alternate
-  });
+	var classNames = (0, _classnames2.default)('Slice', {
+		'Slice--light': light,
+		'Slice--alternate': alternate
+	});
 
-  return _react2.default.createElement(
-    _reactRouterDom.Link,
-    { to: link, className: classNames },
-    _react2.default.createElement('img', { className: 'Slice-icon', src: image }),
-    _react2.default.createElement(
-      'div',
-      { className: 'Slice-heading' },
-      text,
-      ' ',
-      _react2.default.createElement(_keyboardBackspace2.default, { className: 'Slice-forwardIcon' })
-    ),
-    _react2.default.createElement(
-      'div',
-      { className: 'Slice-meta' },
-      bodyText
-    )
-  );
+	return _react2.default.createElement(
+		_reactRouterDom.Link,
+		{ to: link, className: classNames },
+		_react2.default.createElement('img', { className: 'Slice-icon', src: image }),
+		_react2.default.createElement(
+			'div',
+			{ className: 'Slice-heading' },
+			text,
+			' ',
+			_react2.default.createElement(_keyboardBackspace2.default, { className: 'Slice-forwardIcon' })
+		),
+		_react2.default.createElement(
+			'div',
+			{ className: 'Slice-meta' },
+			bodyText
+		)
+	);
 };
 
 exports.default = Slice;
@@ -78505,7 +78503,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _redux = __webpack_require__(55);
@@ -78527,10 +78525,10 @@ var _reducer_signed_in2 = _interopRequireDefault(_reducer_signed_in);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var rootReducer = (0, _redux.combineReducers)({
-  notes: _reducer_notes2.default,
-  subjects: _reducer_subjects2.default,
-  form: _reduxForm.reducer,
-  isSignedIn: _reducer_signed_in2.default
+	notes: _reducer_notes2.default,
+	subjects: _reducer_subjects2.default,
+	form: _reduxForm.reducer,
+	isSignedIn: _reducer_signed_in2.default
 });
 
 exports.default = rootReducer;
@@ -78543,25 +78541,25 @@ exports.default = rootReducer;
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 exports.default = function () {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  var action = arguments[1];
+	var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+	var action = arguments[1];
 
-  switch (action.type) {
-    case _actions.FETCH_NOTES:
-      return _lodash2.default.mapKeys(action.payload.data, 'slug');
-    case _actions.FETCH_NOTE:
-      return _lodash2.default.mapKeys([action.payload.data], 'slug');
-    case _actions.FETCH_SEARCHED_NOTES:
-      return _lodash2.default.mapKeys(action.payload.data, 'slug');
-    case _actions.DELETE_NOTE:
-      return state;
-    default:
-      return state;
-  }
+	switch (action.type) {
+		case _actions.FETCH_NOTES:
+			return _lodash2.default.mapKeys(action.payload.data, 'slug');
+		case _actions.FETCH_NOTE:
+			return _lodash2.default.mapKeys([action.payload.data], 'slug');
+		case _actions.FETCH_SEARCHED_NOTES:
+			return _lodash2.default.mapKeys(action.payload.data, 'slug');
+		case _actions.DELETE_NOTE:
+			return state;
+		default:
+			return state;
+	}
 };
 
 var _actions = __webpack_require__(36);
@@ -78580,19 +78578,19 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 exports.default = function () {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  var action = arguments[1];
+	var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+	var action = arguments[1];
 
-  switch (action.type) {
-    case _actions.FETCH_SUBJECTS:
-      return _lodash2.default.mapKeys(action.payload.data, '_id');
-    default:
-      return state;
-  }
+	switch (action.type) {
+		case _actions.FETCH_SUBJECTS:
+			return _lodash2.default.mapKeys(action.payload.data, '_id');
+		default:
+			return state;
+	}
 };
 
 var _actions = __webpack_require__(36);
@@ -78611,19 +78609,19 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 exports.default = function () {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
-  var action = arguments[1];
+	var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+	var action = arguments[1];
 
-  switch (action.type) {
-    case _actions.SIGN_IN:
-      return action.payload.data.token;
-    default:
-      return state;
-  }
+	switch (action.type) {
+		case _actions.SIGN_IN:
+			return action.payload.data.token;
+		default:
+			return state;
+	}
 };
 
 var _actions = __webpack_require__(36);

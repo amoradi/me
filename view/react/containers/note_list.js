@@ -81,10 +81,6 @@ class NoteList extends React.Component {
 	}
 }
 
-export default connect(mapStateToProps, { fetchNotes, fetchSearchedNotes })(NoteList);
+const mapStateToProps = ({notes}) => ({ notes });
 
-function mapStateToProps(state) {
-	return {
-		notes: state.notes
-	};
-}
+export default connect(mapStateToProps, { fetchNotes, fetchSearchedNotes })(NoteList);

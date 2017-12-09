@@ -6,13 +6,13 @@ My personal website. A simple API and front end for taking notes and displaying 
 
 `tests/api_spec.js` contains test suite to perform CRUD operations on `notes` and `subjects` resources.
 
-Run `npm run test`
+`npm run test` to run all tests
 
 ### Linting
 
-Run `npm run lint` to lint.
+`npm run lint` to lint
 
-Run `npm run lint-fix` to fix files.
+`npm run lint-fix` to fix files
 
 ## Built With
 

@@ -149,8 +149,4 @@ export default reduxForm({
   connect(mapStateToProps, { fetchSubjects, createNote })(AddNewNote)
 );
 
-function mapStateToProps(state) {
-  return {
-    subjects: state.subjects
-  };
-}
+const mapStateToProps = ({ subjects }) => ({ subjects });

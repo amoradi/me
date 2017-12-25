@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 
 import { HOME, NOTES, ARTIFACTS, INFO } from '../../constants';
 import Hamburger from '../hamburger';
-import Menu from '../menu';
 
 class Navigation extends React.Component {
 	constructor(props) {
@@ -15,7 +14,7 @@ class Navigation extends React.Component {
 
 	render() {
 		return (
-			<Menu>
+			<div className="Menu">
 				<ul className="Menu-list">
 					<li className="Menu-item">
 						<Link className="Menu-link" to={HOME}>home</Link>
@@ -30,7 +29,7 @@ class Navigation extends React.Component {
 						<Link className="Menu-link" to={INFO}>info</Link>
 					</li>
 				</ul>
-			</Menu>
+			</div>
 		);
 	}
 }

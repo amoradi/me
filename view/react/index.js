@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import promise from 'redux-promise';
 
 import { NOTES, ARTIFACTS, INFO, HOME } from './constants';
-import App from './components/app';
+//import App from './components/app';
 import Info from './components/info';
 import NoteList from './containers/note_list';
 import NoteShow from './containers/note_show';

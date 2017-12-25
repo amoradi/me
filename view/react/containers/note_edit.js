@@ -153,7 +153,7 @@ export default connect(mapStateToProps, { fetchSubjects, fetchNote, editNote })(
 function mapStateToProps({ notes, subjects }, ownProps) {
   return {
     initialValues: notes[ownProps.match.params.slug],
-    subjects: subjects,
+    subjects,
     note: notes[ownProps.match.params.slug]
   };
 }

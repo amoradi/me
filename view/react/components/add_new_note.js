@@ -142,11 +142,11 @@ function validate(values) {
   return errors;
 }
 
+const mapStateToProps = ({ subjects }) => ({ subjects });
+
 export default reduxForm({
   validate,
   form: 'NotesNewForm'
 })(
   connect(mapStateToProps, { fetchSubjects, createNote })(AddNewNote)
 );
-
-const mapStateToProps = ({ subjects }) => ({ subjects });

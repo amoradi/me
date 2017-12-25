@@ -77804,16 +77804,15 @@ function validate(values) {
   return errors;
 }
 
-exports.default = (0, _reduxForm.reduxForm)({
-  validate: validate,
-  form: 'NotesNewForm'
-})((0, _reactRedux.connect)(mapStateToProps, { fetchSubjects: _actions.fetchSubjects, createNote: _actions.createNote })(AddNewNote));
-
-
 var mapStateToProps = function mapStateToProps(_ref) {
   var subjects = _ref.subjects;
   return { subjects: subjects };
 };
+
+exports.default = (0, _reduxForm.reduxForm)({
+  validate: validate,
+  form: 'NotesNewForm'
+})((0, _reactRedux.connect)(mapStateToProps, { fetchSubjects: _actions.fetchSubjects, createNote: _actions.createNote })(AddNewNote));
 
 /***/ }),
 /* 783 */

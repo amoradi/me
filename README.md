@@ -5,8 +5,9 @@ My personal website. A simple API and front end for taking notes and displaying 
 ## Usage
 
 1. `mongod` start DB
-2. `webpack` bundle js
-3. `npm run start` start app
+2. `webpack` create bundle.js & main.css
+3. `heroku-postbuild` build html from pug files
+4. `npm run start` start app
 
 ## Running the tests
 

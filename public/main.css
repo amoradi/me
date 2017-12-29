@@ -135,7 +135,9 @@ body {
     font: 21px/48px "Source Sans Pro", "Open Sans", sans-serif;
     font: 16px/19px "Source Sans Pro", "Open Sans", sans-serif;
     color: #111;
-    line-height: 2; }
+    line-height: 1.4;
+    margin-top: 0.25rem;
+    display: block; }
   .NoteDetail-readStat {
     transition: color 0.25s;
     font-size: 13px;

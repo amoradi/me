@@ -40,7 +40,9 @@
     @include medium_font;
     font: 16px/19px $font_family;
     color: $almost_black;
-    line-height: 2;
+    line-height: 1.4;
+    margin-top: 0.25rem;
+    display: block;
   }
 
   &-readStat {

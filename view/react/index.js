@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import promise from 'redux-promise';
 
 import { NOTES, ARTIFACTS, INFO, HOME } from './constants';
-//import App from './components/app';
+import ScrollToTop from './components/scroll_to_top';
 import Info from './components/info';
 import NoteList from './containers/note_list';
 import NoteShow from './containers/note_show';
@@ -30,26 +30,28 @@ ReactDOM.render(
 	<Provider store={createStoreWithMiddleware(reducers)}>
 		<MuiThemeProvider>
 			<BrowserRouter>
-				<div className="Domain">
-					<Hamburger />
-					<Navigation />
-					<div className="Stage">
-						<div className="Stage-wrap">
-							<Switch>
-								<Route exact path={HOME} component={Home} />
-								<Route path="/notes/new" component={AddNewNote} />
-								<Route path="/subjects/new" component={AddNewSubject} />
-								<Route path="/notes/edit/:slug" component={EditNote} />
-								<Route path="/notes/:slug" component={NoteShow} />
-								<Route exact path={NOTES} component={NoteList} />
-								<Route exact path={ARTIFACTS} component={Artifacts} />
-								<Route exact path={INFO} component={Info} />
-								<Route exact path="/sign-in" component={SignIn} />
-							</Switch>
-						</div>
-						<footer className="Footer">made by Aaron Bijan Moradi</footer>
-					</div>
-				</div>
+        <ScrollToTop>
+          <div className="Domain">
+            <Hamburger />
+            <Navigation />
+            <div className="Stage">
+              <div className="Stage-wrap">
+                <Switch>
+                  <Route exact path={HOME} component={Home} />
+                  <Route path="/notes/new" component={AddNewNote} />
+                  <Route path="/subjects/new" component={AddNewSubject} />
+                  <Route path="/notes/edit/:slug" component={EditNote} />
+                  <Route path="/notes/:slug" component={NoteShow} />
+                  <Route exact path={NOTES} component={NoteList} />
+                  <Route exact path={ARTIFACTS} component={Artifacts} />
+                  <Route exact path={INFO} component={Info} />
+                  <Route exact path="/sign-in" component={SignIn} />
+                </Switch>
+              </div>
+              <footer className="Footer">made by Aaron Bijan Moradi</footer>
+            </div>
+          </div>
+        </ScrollToTop>
 			</BrowserRouter>
 		</MuiThemeProvider>
 	</Provider>,

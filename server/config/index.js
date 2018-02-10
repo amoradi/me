@@ -4,7 +4,7 @@ var config = {
 	test: 'testing',
 	dev: 'development',
 	prod: 'production',
-	port: process.env.PORT || 3000,
+	port: process.env.PORT || 7777,
 	expireTime: 24 * 60 * 10,
 	secrets: {
 		jwt: process.env.JWT || 'gumball'
